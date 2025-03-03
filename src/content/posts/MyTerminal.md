@@ -7,7 +7,7 @@ coverImage: "/assets/MyTerminal.png"
 galleryImages: []
 author: "Miguel Aréjula Aísa"
 authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
-authorURL: "https://github.com/Arejula11"
+authorUrl: "https://github.com/Arejula11"
 URL: "https://github.com/Arejula11/prompt_exit_status_bash_and_zsh"
 ---
 

@@ -7,16 +7,12 @@ coverImage: "/assets/VSCode-Shorcuts.png"
 galleryImages: []
 author: "Miguel Aréjula Aísa"
 authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
-authorURL: "https://github.com/Arejula11"
+authorUrl: "https://github.com/Arejula11"
 URL: "https://github.com/Arejula11/VSCode-Shorcuts"
 ---
 
-
-# My Favorite VSCode Shortcuts for macOS
-
 Welcome to my VS Code Shortcuts for macOS guide! This repository contains a curated list of my most used keyboard shortcuts for Visual Studio Code on macOS, helping me to boost my productivity.
 
-Contributions are welcome! If you have additional shortcuts or improvements, feel free to open an issue or submit a pull request.
 ## Basic Editing
 - **⌘A** — Select all 
 - **⌘X** — Cut 
