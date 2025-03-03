@@ -1,17 +1,54 @@
 ---
+import background from '../assets/background.svg';
+import BasicLayout from '@/layouts/BasicLayout.astro';
+import { getCollection } from "astro:content";
+import BentoItem from '@components/BentoItem.astro';
+const allPosts = await getCollection("posts");
 
-import BasicLayout from '../layouts/BasicLayout.astro';
-
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Sort posts by date in descending order (newest first)
+const sortedPosts = allPosts.sort(
+  (a, b) => new Date(b.data.publishedDate).getTime() - new Date(a.data.publishedDate).getTime()
+);
 ---
 
 <BasicLayout>
-	<article class="prose lg:prose-xl font-sans">
-		<h1 class="font-display text-4xl">My Awesome Blog Post</h1>
-		<p>This is a paragraph styled with your custom fonts.</p>
-		<pre><code>const example = "code styling!";</code></pre>
-	  </article>
-	  
+<img id="background" src={background.src} alt="" fetchpriority="high" />
+  <main class="px-8 md:px-12 mx-auto max-w-7xl py-12 lg:px-32">
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {sortedPosts.map((post) => (
+        <BentoItem 
+          title={post.data.title} 
+          description={post.data.description} 
+          coverImage={post.data.coverImage} 
+          tags={post.data.tags} 
+		  author={post.data.author} 
+          authorImage={post.data.authorImage} 
+		  url={"/posts/" + post.slug}
+        />
+      ))}
+    </section>
+  </main>
 </BasicLayout>
+
+<style>
+	#background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 200%;
+		height: 110%;
+		z-index: -1;
+		filter: blur(80px);
+	}
+
+	#container {
+		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+		height: 100%;
+	}
+
+	main {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+	}
+	</style>

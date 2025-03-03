@@ -1,12 +1,18 @@
 ---
-title: "My Favorite VSCode Shortcuts"
+title: "My Favorite VSCode Shortcuts for macOS"
 description: "My collection of Visual Studio Code (VS Code) shortcuts to boost productivity."
 tags: ["Tools"]
 publishedDate: "2025-03-2"
+coverImage: "/assets/VSCode-Shorcuts.png"
+galleryImages: []
+author: "Miguel Aréjula Aísa"
+authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
+authorURL: "https://github.com/Arejula11"
+URL: "https://github.com/Arejula11/VSCode-Shorcuts"
 ---
 
 
-# VS Code Shortcuts for macOS
+# My Favorite VSCode Shortcuts for macOS
 
 Welcome to my VS Code Shortcuts for macOS guide! This repository contains a curated list of my most used keyboard shortcuts for Visual Studio Code on macOS, helping me to boost my productivity.
 
