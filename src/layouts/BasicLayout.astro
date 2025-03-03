@@ -1,6 +1,7 @@
 ---
 import NavHeader from "@components/NavHeader.astro";
 import Head from "../components/Head.astro";
+import Footer from "@components/Footer.astro";
 ---
 
 <!doctype html>
@@ -8,9 +9,10 @@ import Head from "../components/Head.astro";
 	<head>
 		<Head />
 	</head>
-	<body>
+	<body class=" flex flex-col min-h-screen">
 		<NavHeader />
-		<slot />
+		<main class="flex-grow"><slot /></main>
+		<Footer />
 	</body>
 </html>
 
