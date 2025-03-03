@@ -1,21 +1,46 @@
 ---
-import NavHeader from "@components/NavHeader.astro";
+import Header from "@components/Header.astro";
 import Head from "../components/Head.astro";
 import Footer from "@components/Footer.astro";
+import background from '../assets/background.svg';
+import { ClientRouter, fade, slide } from 'astro:transitions';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<Head />
+		<ClientRouter />
 	</head>
 	<body class=" flex flex-col min-h-screen">
-		<NavHeader />
-		<main class="flex-grow"><slot /></main>
+		<Header />
+		<main class="flex-grow">
+			<img id="background" src={background.src} alt="" fetchpriority="high" />
+			<slot />
+		</main>
 		<Footer />
 	</body>
 </html>
 
 <style>
+	#background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 200%;
+		height: 110%;
+		z-index: -1;
+		filter: blur(80px);
+	}
 
-</style>
+	#container {
+		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+		height: 100%;
+	}
+
+	main {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+	}
+	</style>
