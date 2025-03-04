@@ -46,13 +46,14 @@ const { Content } = await entry.render();
             alt={entry.data.title}
           />
           <div class="flex flex-col md:flex-row mt-6 justify-between">
-            <div class="flex items-center gap-3 text-xs text-zinc-500">
+            <div class="flex flex-row items-center gap-3 text-xs text-zinc-500">
               {entry.data.authorImage && (
-                <a href={entry.data.authorUrl} target="_blank">
+                <a href={entry.data.authorUrl} target="_blank" class="flex items-center gap-2 hover:underline ">
                   <img src={entry.data.authorImage} alt={entry.data.author} class="w-10 h-10 rounded-full border border-zinc-300" />
+                  <p>{entry.data.author}</p>
                 </a>
               )}
-              <p>{entry.data.author} - {new Date(entry.data.publishedDate).toLocaleDateString()}</p>
+              <p class="-mx-2">- {new Date(entry.data.publishedDate).toLocaleDateString()}</p>
             </div>
             <ol class="flex gap-3">
               {entry.data.tags.map((tag) => (

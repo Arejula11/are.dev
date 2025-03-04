@@ -18,7 +18,7 @@ const lang = getLangFromUrl(Astro.url);
 	</head>
 	<body class=" flex flex-col min-h-screen">
 		<Header />
-		<main class="flex-grow">
+		<main class="flex-grow mb-8">
 			<img id="background" src={background.src} alt="" fetchpriority="high" />
 			<slot />
 		</main>

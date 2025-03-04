@@ -18,9 +18,9 @@ En esta publicación, compartiré mis configuraciones personales del terminal.
 
 ## Elegir la Aplicación de Terminal Adecuada
 
-El primer paso para construir un entorno de terminal eficiente es seleccionar la aplicación de terminal correcta. Si eres usuario de macOS, recomiendo encarecidamente dejar de usar la aplicación Terminal predeterminada. Aunque funcional, carece de la flexibilidad y las funciones avanzadas que ofrecen las alternativas modernas.
+El primer paso para construir un entorno de terminal eficiente es seleccionar la aplicación de terminal correcta. Si eres usuario de macOS, recomiendo encarecidamente dejar de usar la aplicación Terminal predeterminada. Aunque es funcional, carece de la flexibilidad y las funciones avanzadas que ofrecen las alternativas modernas.
 
-Con el tiempo, he experimentado con diferentes aplicaciones de terminal. Comencé con **iTerm2**, una opción popular conocida por su versatilidad y opciones de personalización. Sin embargo, recientemente cambié a **Warp**, un nuevo terminal potenciado por IA.
+Con el tiempo, he utilizado varias aplicaciones distintas de terminal. Comencé con **iTerm2**, una opción popular conocida por su versatilidad y opciones de personalización. Sin embargo, recientemente cambié a **Warp**, un nuevo terminal potenciado por IA.
 
 ¿Por qué elegí **Warp**?
 - **Integración con IA**: La asistencia de IA integrada de Warp ayuda a generar comandos, depurar errores y optimizar flujos de trabajo.
@@ -35,7 +35,7 @@ Tanto **iTerm2** como **Warp** son mejoras significativas respecto al terminal p
 Una vez que hayas elegido una aplicación de terminal, el siguiente paso es personalizarla. Una configuración efectiva puede ahorrar tiempo y facilitar la navegación en tu terminal.
 
 ### Creación de Alias
-Una de las personalizaciones más impactantes es el uso de **alias**. Los alias te permiten crear atajos para comandos que usas con frecuencia, reduciendo las pulsaciones de teclas y mejorando la eficiencia.
+Una de las configuraciones con mayor impacto es el uso de **alias**. Los alias te permiten crear atajos para comandos que usas con frecuencia, reduciendo las pulsaciones de teclas y mejorando la eficiencia.
 
 Por ejemplo, en lugar de escribir el comando completo para ir a un directorio de proyecto:
 
@@ -74,4 +74,6 @@ Personalizar tu terminal lleva tiempo y esfuerzo, por lo que es crucial asegurar
 
 Al mantener tu *.bashrc*, *.zshrc* o cualquier script personalizado en un repositorio con control de versiones, puedes rastrear cambios, compartir configuraciones entre dispositivos y colaborar con otros. También simplifica el proceso de reconfiguración de tu terminal: con un simple *git clone*, puedes tener todo tu entorno listo en cuestión de minutos.
 
-Recomiendo mucho crear un repositorio dedicado para tus configuraciones del terminal. Si deseas ver las mías, puedes encontrarlas [aquí](https://github.com/Arejula11/prompt_exit_status_bash_and_zsh).
+Recomiendo mucho crear un repositorio dedicado para tus configuraciones del terminal. Si deseas ver mis ficheros de configuración, puedes encontrarlos [aquí](https://github.com/Arejula11/prompt_exit_status_bash_and_zsh).
+
+Recientemente me han recomendado una herramienta llamada **chezmoi**, esta permite gestionar los ficheros de configuración, conocidos como  *.dotfiles*, entre diversas máquinas de una forma rápida y sencilla. Promete poder descargar e instalar estos ficheros de configuración de una forma rápida y sencilla. Sin duda es una herramienta que reduce significativamente el tiempo de configuración de un nuevo entorno y que estoy deseando probar pronto. Si quieres saber más, puedes leer su documentación oficial [aquí](https://www.chezmoi.io/#should-i-use-chezmoi).
