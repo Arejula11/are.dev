@@ -75,3 +75,5 @@ Customizing your terminal takes time and effort, so it's crucial to ensure your 
 By keeping your *.bashrc*, *.zshrc*, or any custom scripts in a version-controlled repository, you can easily track changes, share configurations across devices, and collaborate with others. It also simplifies the process of reconfiguring your terminal with a simple *git clone*, you can have your entire setup ready to go within minutes.
 
 I highly recommend creating a dedicated repository for your terminal configurations. If you want to check out mine, you can find it [here](https://github.com/Arejula11/prompt_exit_status_bash_and_zsh).
+
+Recently, I was recommended a tool called **chezmoi**, which efficiently manages configuration files, known as dotfiles, across multiple machines. It promises to download and install these configuration files in a fast and simple way. Without a doubt, it's a tool that reduces significantly the time needed to set up a new environment, and I'm looking forward to trying it soon. If you want to learn more, you can check out its official documentation [here](https://www.chezmoi.io/#should-i-use-chezmoi).
