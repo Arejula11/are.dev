@@ -11,6 +11,7 @@ let homeEs = url === "/es" ? true : false;
 
 <header class="flex justify-between items-center p-4 w-full max-w-[85%] mx-auto">
     <a href="/" class="text-xl text-orange-500 ">are.dev</a>
+    <a>{url}</a>
     {home ? <LanguagePicker /> : "" }
     {homeEs ? <LanguagePicker /> : "" }
 </header>
