@@ -6,6 +6,8 @@ import { getCollection } from "astro:content";
 import BentoItem from '@components/BentoItem.astro';
 import TagsBar from '@components/TagsBar.astro';
 import { getLangFromUrl } from '@/i18n/utils';
+import { languages } from "@/i18n/ui";
+
 
 const lang = getLangFromUrl(Astro.url);
 
@@ -17,7 +19,6 @@ const allPosts = await getCollection("posts",({ data }) => {
 const sortedPosts = allPosts.sort(
   (a, b) => new Date(b.data.publishedDate).getTime() - new Date(a.data.publishedDate).getTime()
 );
-
 
 
 ---
@@ -34,7 +35,7 @@ const sortedPosts = allPosts.sort(
           tags={post.data.tags} 
 		  author={post.data.author} 
           authorImage={post.data.authorImage} 
-		  url={"/posts/" + post.slug}
+		  url={"es/posts/" + post.slug}
         />
       ))}
     </section>

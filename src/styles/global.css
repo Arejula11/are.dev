@@ -28,6 +28,17 @@
     line-height: 1.5;
     color: #333;
   }
+  @media (max-width: 768px) {
+    pre {
+      white-space: pre-wrap;
+    }
+  }
+
+  
+  pre {
+    max-width: 100%;
+    overflow-x: auto; /* Scroll horizontal si el contenido es demasiado grande */
+  }
   
   /* CSS */
   :root {

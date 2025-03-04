@@ -9,5 +9,5 @@ author: "Miguel Aréjula Aísa"
 authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
 authorUrl: "https://github.com/Arejula11"
 draft: true
-language: "en"
+language: "es"
 ---

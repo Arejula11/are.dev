@@ -1,7 +1,10 @@
 ---
 import { getCollection } from "astro:content";
+import { getLangFromUrl } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
 const allPosts = await getCollection("posts",({ data }) => {
-  return data.draft !== true;
+  return data.draft !== true && data.language === lang;
 });
 const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 tags.sort();
