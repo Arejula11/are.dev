@@ -5,7 +5,9 @@ import { getCollection } from "astro:content";
 import TagsBar from "@components/TagsBar.astro";
 
 export async function getStaticPaths() {
-  const allPosts = await getCollection("posts");
+  const allPosts = await getCollection("posts",({ data }) => {
+    return data.draft !== true;
+  });
   const uniqueTags = [
     ...new Set(allPosts.map((post) => post.data.tags).flat()),
   ];

@@ -14,6 +14,7 @@ const postsCollection = defineCollection({
     authorImage: z.string().optional(),
     authorUrl: z.string().optional(),
     URL: z.string().optional(),
+    draft: z.boolean(),
   }),
 });
 
