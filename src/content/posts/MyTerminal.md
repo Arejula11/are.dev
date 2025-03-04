@@ -72,6 +72,6 @@ This small but effective tweak allows me to instantly identify whether a command
 
 Customizing your terminal takes time and effort, so it's crucial to ensure your configurations are safely backed up. One effective way to do this is by storing them in a remote repository, such as a GitHub repo. This not only safeguards your settings in case of unexpected data loss but also allows you to quickly restore your personalized setup when resetting your disk or switching to a new machine.
 
-By keeping your `.bashrc`, `.zshrc`, or any custom scripts in a version-controlled repository, you can easily track changes, share configurations across devices, and collaborate with others. It also simplifies the process of reconfiguring your terminal — with a simple `git clone`, you can have your entire setup ready to go within minutes.
+By keeping your *.bashrc*, *.zshrc*, or any custom scripts in a version-controlled repository, you can easily track changes, share configurations across devices, and collaborate with others. It also simplifies the process of reconfiguring your terminal with a simple *git clone*, you can have your entire setup ready to go within minutes.
 
 I highly recommend creating a dedicated repository for your terminal configurations. If you want to check out mine, you can find it [here](https://github.com/Arejula11/prompt_exit_status_bash_and_zsh).

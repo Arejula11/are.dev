@@ -1,6 +1,6 @@
 ---
 title: "Mis atajos favoritos de VS Code Shortcuts para macOS"
-description: "Mi colección de atajos."
+description: "Mi colección de atajos para aumentar la productividad."
 tags: ["Herramientas"]
 publishedDate: "2025-03-3"
 coverImage: "/assets/VSCode-Shorcuts.png"
@@ -12,67 +12,68 @@ draft: false
 language: "es"
 ---
 
-Visual Studio Code (VS Code) has become my go-to code editor due to its versatility, extensive extension ecosystem, and intuitive interface. Over time, I have explored various features and discovered that mastering keyboard shortcuts significantly boosts my productivity.  
+Visual Studio Code (VS Code) se ha convertido en mi editor de código favorito debido a su versatilidad, su amplio ecosistema de extensiones y su interfaz intuitiva. Con el tiempo, he explorado varias de sus funciones y he descubierto que dominar los atajos de teclado mejora significativamente mi productividad.
 
-I have used VS Code with different operating systems but primarily on macOS. While the editor allows for customizing key bindings, I prefer to stick to the default shortcuts as they are well-thought-out and efficient.  
+He utilizado VS Code en diferentes sistemas operativos, aunque principalmente en macOS. Si bien el editor permite personalizar las combinaciones de teclas, prefiero mantener los atajos predeterminados, ya que están bien diseñados y son muy eficientes.
 
-In this post, I want to share a curated list of my favorite VS Code shortcuts — the ones I rely on every day. Whether you're a beginner aiming to streamline your workflow or an experienced developer looking to pick up a few new tricks, I hope you'll find this collection useful.  
+En esta publicación, quiero compartir una lista cuidadosamente seleccionada de mis atajos favoritos de VS Code, aquellos en los que confío cada día. Ya sea que estés comenzando y quieras optimizar tu flujo de trabajo o que seas un desarrollador experimentado buscando aprender algunos trucos nuevos, espero que esta colección te resulte útil.
 
+## Atajos de Teclado en VS Code
 
-### Basic Editing
-- **⌘A** — Select all 
-- **⌘X** — Cut 
-- **⌘C** — Copy 
-- **⌘V** — Paste 
-- **⌘Z** — Undo 
-- **⌘⇧Z** — Redo 
+### Edición Básica
+- **⌘A** — Seleccionar todo
+- **⌘X** — Cortar
+- **⌘C** — Copiar
+- **⌘V** — Pegar
+- **⌘Z** — Deshacer
+- **⌘⇧Z** — Rehacer
 
-### File and Navigation
-- **⌘P** — Open file by search 
-- **⌘K ⌘W** — Close all tabs 
+### Ficheros y Navegación
+- **⌘P** — Abrir fichero por búsqueda
+- **⌘K ⌘W** — Cerrar todas las pestañas
 
-### Sidebar and Panels
-- **⌘B** — Toggle sidebar 
-- **⌘⌥B** — Toggle secondary sidebar
-- **⌘J** — Toggle bottom panel 
+### Barra Lateral y Paneles
+- **⌘B** — Alternar barra lateral
+- **⌘⌥B** — Alternar barra lateral secundaria
+- **⌘J** — Alternar panel inferior
 
-### Command Palette
-- **⌘⇧P** — Open command palette
-- **⌘K ⌘S** — Open keyboard shortcuts
+### Paleta de Comandos
+- **⌘⇧P** — Abrir paleta de comandos
+- **⌘K ⌘S** — Abrir atajos de teclado
 
-### Code Editing
-- **⌘L** — Select line 
-- **⌘D** — Select next occurrence
-- **⌘⇧L** — Select all occurrences
-- **⌘F** — Search 
-- **⌘⇧F** — Search in all files 
-- **⌘G** — Go to next occurrence
-- **⌘⇧G** — Go to previous occurrence
-- **⌘⇧K** — Delete line 
-- **⌥⇧↑** — Duplicate line above 
-- **⌥⇧↓** — Duplicate line below 
-- **⌥↑** — Move line up
-- **⌥↓** — Move line down 
+### Edición de Código
+- **⌘L** — Seleccionar línea
+- **⌘D** — Seleccionar siguiente ocurrencia
+- **⌘⇧L** — Seleccionar todas las ocurrencias
+- **⌘F** — Buscar
+- **⌘⇧F** — Buscar en todos los archivos
+- **⌘G** — Ir a la siguiente ocurrencia
+- **⌘⇧G** — Ir a la ocurrencia anterior
+- **⌘⇧K** — Eliminar línea
+- **⌥⇧↑** — Duplicar línea arriba
+- **⌥⇧↓** — Duplicar línea abajo
+- **⌥↑** — Mover línea arriba
+- **⌥↓** — Mover línea abajo
 
+### Edición con Múltiples Cursores
+- **⌘⌥↑** — Añadir cursor arriba
+- **⌘⌥↓** — Añadir cursor abajo
 
-### Multi-Cursor Editing
-- **⌘⌥↑** — Add cursor above 
-- **⌘⌥↓** — Add cursor below 
+### Desplazamiento y Movimiento del Cursor
+- **⌘↑** — Desplazarse hacia arriba
+- **⌘↓** — Desplazarse hacia abajo
+- **⌘→** — Mover el cursor al final de la línea
+- **⌘←** — Mover el cursor al inicio de la línea
+- **⌥→** — Mover el cursor al final de la palabra
+- **⌥←** — Mover el cursor al inicio de la palabra
 
-### Scrolling and Cursor Movement
-- **⌘↑** — Scroll up 
-- **⌘↓** — Scroll down 
-- **⌘→** — Move cursor to end of line 
-- **⌘←** — Move cursor to start of line 
-- **⌥→** — Move cursor to end of word 
-- **⌥←** — Move cursor to start of word 
+### Selección
+- **⌘⇧↑** — Seleccionar desde el cursor hasta el inicio del archivo
+- **⌘⇧↓** — Seleccionar desde el cursor hasta el final del archivo
+- **⌘⇧→** — Seleccionar desde el cursor hasta el final de la línea
+- **⌘⇧←** — Seleccionar desde el cursor hasta el inicio de la línea
 
-### Selection
-- **⌘⇧↑** — Select from cursor to start of file 
-- **⌘⇧↓** — Select from cursor to end of file 
-- **⌘⇧→** — Select from cursor to end of line 
-- **⌘⇧←** — Select from cursor to start of line 
+### Comentar
+- **⌘K ⌘C** — Comentar una línea o las líneas seleccionadas
+- **⌘K ⌘U** — Descomentar una línea o las líneas seleccionadas
 
-### Commenting
-- **⌘K ⌘C** — Comment a line or all selected lines 
-- **⌘K ⌘U** — Uncomment a line or all selected lines 
