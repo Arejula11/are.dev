@@ -1,48 +1,36 @@
-# Astro Starter Kit: Basics
+# Are.Dev
 
-```sh
-npm create astro@latest -- --template basics
+## A blog dedicated to mastering software development — learn, build, and elevate your coding skills.
+
+Welcome to **Are.Dev** — a space where I document my journey through the world of software development. This blog is not just about what I know, but about what I continue to learn. My goal is to grow as a developer while sharing insights, tips, and techniques with the dev community.
+
+Whether you're just starting out or already a seasoned programmer, I hope you find something here that inspires you, sharpens your skills, or simply makes your coding life a bit easier.
+
+![home](/public/assets/homescreen.png)
+
+### Structure
+
+The blog content is organized using markdown files, with metadata for each post stored at the top, following this format:
+```
+---
+title: "Post Title"
+description: "Brief summary of the post."
+tags: ["Tag1", "Tag2"]
+publishedDate: "YYYY-MM-DD"
+coverImage: "/assets/image.png"
+author: "Name"
+authorImage: "link to your GitHub picture"
+authorUrl: "link to your GitHub account"
+URL: "Post URL"
+draft: boolean
+---
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+### Contributing
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+I'm always open to feedback and suggestions! If you find an error, have an idea for a new post, or want to improve something, feel free to open an issue or submit a pull request.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+### License
 
-## 🚀 Project Structure
+This project is licensed under the GPL-3.0 License, you are welcome to fork and adapt it for your own blog.
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
