@@ -1,0 +1,94 @@
+---
+import { getCollection } from 'astro:content';
+import BasicLayout from '@layouts/BasicLayout.astro';
+import BentoItem from '@components/BentoItem.astro';
+import { getLangFromUrl } from '@/i18n/utils';
+
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("posts");
+
+  // Generate paths for each language
+  const paths = allPosts
+    .filter(({ data }) => data.draft !== true)
+    .map((entry) => ({
+      params: { slug: entry.slug },
+      props: { entry },
+    }));
+
+  return paths;
+}
+
+const { entry } = Astro.props;
+
+// Get language at runtime for dynamic use
+const lang = getLangFromUrl(Astro.url);
+
+// Fetch all posts again (could be optimized if needed)
+const allPosts = await getCollection("posts", ({ data }) => data.draft !== true);
+
+// Filter out current post and limit to 2 posts for "More Posts" section
+const filterPosts = allPosts.filter((post) => post.slug !== entry.slug && post.data.language === lang);
+const posts = filterPosts.slice(0, 2);
+
+// Render content for the current post
+const { Content } = await entry.render();
+---
+
+<BasicLayout>
+  <div class="flex flex-col">
+    <article class="bg-white rounded-4xl shadow-2xl border border-zinc-300 w-full max-w-5xl mx-auto">
+      <div class="px-8 py-16 md:px-16 lg:px-20 lg:pt-8">
+        <div class="text-center">
+          <img
+            class="w-full max-h-[500px] object-cover rounded-3xl shadow-md"
+            src={entry.data.coverImage}
+            alt={entry.data.title}
+          />
+          <div class="flex flex-col md:flex-row mt-6 justify-between">
+            <div class="flex items-center gap-3 text-xs text-zinc-500">
+              {entry.data.authorImage && (
+                <a href={entry.data.authorUrl} target="_blank">
+                  <img src={entry.data.authorImage} alt={entry.data.author} class="w-10 h-10 rounded-full border border-zinc-300" />
+                </a>
+              )}
+              <p>{entry.data.author} - {new Date(entry.data.publishedDate).toLocaleDateString()}</p>
+            </div>
+            <ol class="flex gap-3">
+              {entry.data.tags.map((tag) => (
+                <li class="inline-flex items-center uppercase mx-auto hover:text-orange-500 text-xs font-medium text-black">
+                  <a href={`/tags/${tag}`}>{tag}</a>
+                </li>
+              ))}
+            </ol>
+          </div>
+          <h1 class="mt-16 text-5xl font-display-300 text-black md:text-7xl">{entry.data.title}</h1>
+          <p class="mt-8 text-xl text-zinc-600 max-w-3xl mx-auto">
+            <em>{entry.data.description}</em>
+          </p>
+        </div>
+        <article class="mt-16 max-w-4xl mx-auto prose prose-lg">
+          <Content />
+        </article>
+      </div>
+    </article>
+    <div class="mt-16">
+      <div class="px-8 md:px-12 mx-auto max-w-7xl py-8 lg:px-32">
+        <h2 class="text-3xl font-display-300 pb-2 text-black">More Posts</h2>
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {posts.map((post) => (
+            <BentoItem
+              title={post.data.title}
+              description={post.data.description}
+              coverImage={post.data.coverImage}
+              tags={post.data.tags}
+              author={post.data.author}
+              authorImage={post.data.authorImage}
+              url={'/posts/' + post.slug}
+            />
+          ))}
+        </section>
+      </div>
+    </div>
+  </div>
+</BasicLayout>

@@ -1,10 +1,19 @@
-<!-- ---
-import { languages } from '../i18n/ui';
 ---
-<ul>
-  {Object.entries(languages).map(([lang, label]) => (
-    <li>
-      <a href={`/${lang}/`}>{label}</a>
-    </li>
-  ))}
-</ul> -->
+
+import { getLangFromUrl } from '../i18n/utils';
+const Language = getLangFromUrl(Astro.url);
+---
+
+
+<div id="language-picker">
+  {Language === 'es' ? (
+    <>
+      <a href="/">en</a> | <a href="/es" class="text-orange-500">es</a>
+    </>
+  ) : (
+    <>
+      <a href="/" class="text-orange-500">en</a> | <a href="/es">es</a>
+    </>
+  )}
+</div>
+

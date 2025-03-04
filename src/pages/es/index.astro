@@ -1,0 +1,44 @@
+---
+import type { GetStaticPaths } from "astro";
+
+import BasicLayout from '@/layouts/BasicLayout.astro';
+import { getCollection } from "astro:content";
+import BentoItem from '@components/BentoItem.astro';
+import TagsBar from '@components/TagsBar.astro';
+import { getLangFromUrl } from '@/i18n/utils';
+import { languages } from "@/i18n/ui";
+
+
+const lang = getLangFromUrl(Astro.url);
+
+const allPosts = await getCollection("posts",({ data }) => {
+  return data.draft !== true && data.language === lang;
+});
+
+// Sort posts by date in descending order (newest first)
+const sortedPosts = allPosts.sort(
+  (a, b) => new Date(b.data.publishedDate).getTime() - new Date(a.data.publishedDate).getTime()
+);
+
+
+---
+
+<BasicLayout>
+	<main class="px-8 md:px-12 mx-auto max-w-7xl  lg:px-32">
+	  <TagsBar />
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {sortedPosts.map((post) => (
+        <BentoItem 
+          title={post.data.title} 
+          description={post.data.description} 
+          coverImage={post.data.coverImage} 
+          tags={post.data.tags} 
+		  author={post.data.author} 
+          authorImage={post.data.authorImage} 
+		  url={"es/posts/" + post.slug}
+        />
+      ))}
+    </section>
+  </main>
+</BasicLayout>
+

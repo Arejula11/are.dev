@@ -2,9 +2,13 @@
 import LanguagePicker from "./LanguagePicker.astro";
 
 
+const url = Astro.url.pathname;
+console.log(url);
+let home = url === "/" || url ==="/es" ? true : false;
+
 ---
 
-<header class="flex justify-between items-center p-4 w-full max-w-7xl mx-auto">
+<header class="flex justify-between items-center p-4 w-full max-w-[85%] mx-auto">
     <a href="/" class="text-xl text-orange-500 ">are.dev</a>
-    <LanguagePicker />
+    {home ? <LanguagePicker /> : "" }
 </header>
