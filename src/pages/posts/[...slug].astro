@@ -3,13 +3,17 @@ import { getCollection } from 'astro:content';
 import BasicLayout from '@layouts/BasicLayout.astro';
 import BentoItem from '@components/BentoItem.astro';
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('posts');
+  const blogEntries = await getCollection("posts",({ data }) => {
+    return data.draft !== true;
+  });
   return blogEntries.map(entry => ({
     params: { slug: entry.slug }, props: { entry },
   }));
 }
 
-const allPosts = await getCollection('posts');
+const allPosts = await getCollection("posts",({ data }) => {
+  return data.draft !== true;
+});
 const { entry } = Astro.props;
 // eliminamos el post actual de la lista de posts
 const filterPosts = allPosts.filter((post) => post.slug !== entry.slug);

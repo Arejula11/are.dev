@@ -4,7 +4,9 @@ import BasicLayout from '@/layouts/BasicLayout.astro';
 import { getCollection } from "astro:content";
 import BentoItem from '@components/BentoItem.astro';
 import TagsBar from '@components/TagsBar.astro';
-const allPosts = await getCollection("posts");
+const allPosts = await getCollection("posts",({ data }) => {
+  return data.draft !== true;
+});
 
 // Sort posts by date in descending order (newest first)
 const sortedPosts = allPosts.sort(
