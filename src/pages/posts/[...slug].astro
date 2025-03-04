@@ -4,7 +4,7 @@ import BasicLayout from '@layouts/BasicLayout.astro';
 import BentoItem from '@components/BentoItem.astro';
 import { getLangFromUrl } from '@/i18n/utils';
 
-// No need to use Astro.url here since getStaticPaths runs at build time
+
 export async function getStaticPaths() {
   const allPosts = await getCollection("posts");
 
@@ -28,7 +28,7 @@ const lang = getLangFromUrl(Astro.url);
 const allPosts = await getCollection("posts", ({ data }) => data.draft !== true);
 
 // Filter out current post and limit to 2 posts for "More Posts" section
-const filterPosts = allPosts.filter((post) => post.slug !== entry.slug);
+const filterPosts = allPosts.filter((post) => post.slug !== entry.slug && post.data.language === lang);
 const posts = filterPosts.slice(0, 2);
 
 // Render content for the current post
