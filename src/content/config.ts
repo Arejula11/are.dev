@@ -15,6 +15,7 @@ const postsCollection = defineCollection({
     authorUrl: z.string().optional(),
     URL: z.string().optional(),
     draft: z.boolean(),
+    language: z.string()
   }),
 });
 

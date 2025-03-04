@@ -1,7 +1,7 @@
 ---
-title: "My Terminal Configurations"
-description: "My collection of Terminal configurations to boost productivity and enhance its appearance."
-tags: ["Configurations"]
+title: "La configuración de mi terminal"
+description: "Mis ajustes de terminal"
+tags: ["Configuración"]
 publishedDate: "2025-03-03"
 coverImage: "/assets/MyTerminal.png"
 galleryImages: []
@@ -9,7 +9,7 @@ author: "Miguel Aréjula Aísa"
 authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
 authorUrl: "https://github.com/Arejula11"
 draft: false
-language: "en"
+language: "es"
 ---
 
 The terminal is one of the most essential tools for any software developer. It provides a powerful way to interact with your computer, automate tasks, and manage development environments efficiently. However, using the terminal effectively goes beyond basic commands — it involves configuring and customizing it to suit your workflow.  

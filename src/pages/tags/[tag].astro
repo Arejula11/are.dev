@@ -3,10 +3,13 @@ import BasicLayout from "@layouts/BasicLayout.astro";
 import BentoItem from "@components/BentoItem.astro";
 import { getCollection } from "astro:content";
 import TagsBar from "@components/TagsBar.astro";
+import { getLangFromUrl } from '@/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("posts",({ data }) => {
-    return data.draft !== true;
+    return data.draft !== true && data.language === lang;
   });
   const uniqueTags = [
     ...new Set(allPosts.map((post) => post.data.tags).flat()),

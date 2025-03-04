@@ -1,17 +1,25 @@
 ---
+import type { GetStaticPaths } from "astro";
 
 import BasicLayout from '@/layouts/BasicLayout.astro';
 import { getCollection } from "astro:content";
 import BentoItem from '@components/BentoItem.astro';
 import TagsBar from '@components/TagsBar.astro';
+import { getLangFromUrl } from '@/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+
 const allPosts = await getCollection("posts",({ data }) => {
-  return data.draft !== true;
+  return data.draft !== true && data.language === lang;
 });
 
 // Sort posts by date in descending order (newest first)
 const sortedPosts = allPosts.sort(
   (a, b) => new Date(b.data.publishedDate).getTime() - new Date(a.data.publishedDate).getTime()
 );
+
+
+
 ---
 
 <BasicLayout>
