@@ -79,7 +79,7 @@ const { Content } = await entry.render();
               <iframe
                 class="w-full h-full rounded-lg shadow-lg"
                 src={entry.data.video}
-                title="YouTube video player"
+                title={entry.data.videoTitle}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"

@@ -17,6 +17,7 @@ const postsCollection = defineCollection({
     draft: z.boolean(),
     language: z.string(),
     video: z.string().optional(),
+    videoTitle: z.string().optional(),
   }),
 });
 
