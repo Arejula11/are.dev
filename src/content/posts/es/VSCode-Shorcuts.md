@@ -10,6 +10,7 @@ authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
 authorUrl: "https://github.com/Arejula11"
 draft: false
 language: "es"
+keywords: ["VS Code", "Atajos de teclado", "Productividad", "Desarrollo de software"]
 ---
 
 Visual Studio Code (VS Code) se ha convertido en mi editor de código favorito debido a su versatilidad, su amplio ecosistema de extensiones y su interfaz intuitiva. Con el tiempo, he explorado varias de sus funciones y he descubierto que dominar los atajos de teclado mejora significativamente mi productividad.

@@ -12,6 +12,7 @@ draft: false
 language: "en"
 video: "https://www.youtube.com/embed/TQ3G9RHcuNw?si=1xsfPXaIYt0bSy8x"
 videoTitle: "Boost Your Productivity: My Pro Terminal Configuration"
+keywords: ["Terminal", "Configuration", "Productivity", "Warp", "iTerm2", "Alias", "Color Prompt", "Chezmoi"]
 ---
 
 The terminal is one of the most essential tools for any software developer. It provides a powerful way to interact with your computer, automate tasks, and manage development environments efficiently. However, using the terminal effectively goes beyond basic commands — it involves configuring and customizing it to suit your workflow.  
