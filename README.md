@@ -25,7 +25,7 @@ The blog content is organized using markdown files, with metadata for each post 
 title: "Post Title"
 description: "Brief summary of the post."
 tags: ["Tag1", "Tag2"]
-publishedDate: "YYYY-MM-DD"
+publishedDate: "YYYY-MM-DD HH:MM"
 coverImage: "/assets/image.png"
 author: "Name"
 authorImage: "link to your GitHub picture"
