@@ -73,10 +73,22 @@ const { Content } = await entry.render();
         <article class="mt-16 max-w-4xl mx-auto prose prose-lg">
           <Content />
         </article>
-        <div class="flex items-center justify-center mt-8">
-
-          { entry.data.video && <iframe width="560" height="315" src={entry.data.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>}
+        <div class="flex justify-center items-center mt-8">
+          {entry.data.video && (
+            <div class="w-full max-w-3xl aspect-video">
+              <iframe
+                class="w-full h-full rounded-lg shadow-lg"
+                src={entry.data.video}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            </div>
+          )}
         </div>
+        
         
       </div>
     </article>
