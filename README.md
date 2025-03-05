@@ -8,6 +8,15 @@ Whether you're just starting out or already a seasoned programmer, I hope you fi
 
 ![home](/public/assets/homescreen.png)
 
+### RSS Feed
+
+Stay updated with the latest posts from **Are.dev**!  
+
+The RSS feed is now available:  
+[Subscribe to the RSS feed](https://are-dev.vercel.app/index.xml) 
+
+Add it to your favorite feed reader and never miss a post!
+
 ### Structure
 
 The blog content is organized using markdown files, with metadata for each post stored at the top, following this format:
