@@ -2,7 +2,7 @@
 title: "La configuración de mi terminal"
 description: "Mis ajustes del terminal para aumentar la productividad y mejorar su apariencia"
 tags: ["Configuración"]
-publishedDate: "2025-03-03"
+publishedDate: "2025-03-03 15:00"
 coverImage: "/assets/MyTerminal.png"
 galleryImages: []
 author: "Miguel Aréjula Aísa"

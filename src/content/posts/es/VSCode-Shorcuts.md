@@ -2,7 +2,7 @@
 title: "Mis atajos favoritos de VS Code Shortcuts para macOS"
 description: "Mi colección de atajos para aumentar la productividad."
 tags: ["Herramientas"]
-publishedDate: "2025-03-3"
+publishedDate: "2025-03-3 13:00"
 coverImage: "/assets/VSCode-Shorcuts.png"
 galleryImages: []
 author: "Miguel Aréjula Aísa"

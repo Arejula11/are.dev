@@ -2,7 +2,7 @@
 title: "PlayBeat"
 description: "My first Astro project"
 tags: ["My projects"]
-publishedDate: "2025-03-04"
+publishedDate: "2025-03-04 13:00"
 coverImage: "/assets/MyTerminal.png"
 galleryImages: []
 author: "Miguel Aréjula Aísa"
