@@ -10,6 +10,7 @@ authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
 authorUrl: "https://github.com/Arejula11"
 draft: false
 language: "es"
+video: "https://www.youtube.com/embed/TQ3G9RHcuNw?si=1xsfPXaIYt0bSy8x"
 ---
 
 El terminal es una de las herramientas  esenciales para cualquier desarrollador de software. Permite interactuar con tu computadora, automatizar tareas y gestionar entornos de desarrollo de manera eficiente. Sin embargo, usar el terminal de forma efectiva va más allá de los comandos básicos: implica configurarlo y personalizarlo para adaptarlo a tu flujo de trabajo.
@@ -81,4 +82,4 @@ Recientemente me han recomendado una herramienta llamada **chezmoi**, esta permi
 
 If you'd like to see my terminal configurations in action, check out the video I created on YouTube. [Watch the video here](https://youtu.be/TQ3G9RHcuNw)
 
-Si quieres ver mi terminal en acción, te invito a ver el video que hice en YouTube. [Mira el vídeo aquí](https://youtu.be/TQ3G9RHcuNw)
+Si quieres ver mi terminal en acción, te invito a ver el video que en YouTube.

@@ -10,6 +10,7 @@ authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
 authorUrl: "https://github.com/Arejula11"
 draft: false
 language: "en"
+video: "https://www.youtube.com/embed/TQ3G9RHcuNw?si=1xsfPXaIYt0bSy8x"
 ---
 
 The terminal is one of the most essential tools for any software developer. It provides a powerful way to interact with your computer, automate tasks, and manage development environments efficiently. However, using the terminal effectively goes beyond basic commands — it involves configuring and customizing it to suit your workflow.  
@@ -78,4 +79,4 @@ I highly recommend creating a dedicated repository for your terminal configurati
 
 Recently, I was recommended a tool called **chezmoi**, which efficiently manages configuration files, known as dotfiles, across multiple machines. It promises to download and install these configuration files in a fast and simple way. Without a doubt, it's a tool that reduces significantly the time needed to set up a new environment, and I'm looking forward to trying it soon. If you want to learn more, you can check out its official documentation [here](https://www.chezmoi.io/#should-i-use-chezmoi).
 
-If you'd like to see my terminal configurations in action, check out the video I created on YouTube. [Watch the video here](https://youtu.be/TQ3G9RHcuNw)
+If you'd like to see my terminal configurations in action, check out the video.
