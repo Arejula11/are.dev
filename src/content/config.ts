@@ -18,6 +18,7 @@ const postsCollection = defineCollection({
     language: z.string(),
     video: z.string().optional(),
     videoTitle: z.string().optional(),
+    keywords: z.array(z.string()).optional(),
   }),
 });
 
