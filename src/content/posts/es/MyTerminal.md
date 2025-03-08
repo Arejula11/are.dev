@@ -81,7 +81,4 @@ Recomiendo mucho crear un repositorio dedicado para tus configuraciones del term
 
 Recientemente me han recomendado una herramienta llamada **chezmoi**, esta permite gestionar los ficheros de configuración, conocidos como  *.dotfiles*, entre diversas máquinas de una forma rápida y sencilla. Promete poder descargar e instalar estos ficheros de configuración de una forma rápida y sencilla. Sin duda es una herramienta que reduce significativamente el tiempo de configuración de un nuevo entorno y que estoy deseando probar pronto. Si quieres saber más, puedes leer su documentación oficial [aquí](https://www.chezmoi.io/#should-i-use-chezmoi).
 
-
-If you'd like to see my terminal configurations in action, check out the video I created on YouTube. [Watch the video here](https://youtu.be/TQ3G9RHcuNw)
-
 Si quieres ver mi terminal en acción, te invito a ver el video que en YouTube.
