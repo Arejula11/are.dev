@@ -3,7 +3,7 @@ title: "Start your first Full stack project"
 description: "In this post, I share my recommendation to build your first full-stack project; combining both front-end and back-end technologies to create a fully functional application."
 tags: ["Learning"]
 publishedDate: "2025-03-9 13:00"
-coverImage: "/assets/fitlife.png"
+coverImage: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 author: "Miguel Aréjula Aísa"
 authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
 authorUrl: "https://github.com/Arejula11"
@@ -25,7 +25,7 @@ Once we had our tech stack and design tools chosen, it was time to move on to th
 To avoid this, I highly recommend defining a team leader and dividing the group into front-end and back-end developers. The team leader should break the project into tasks, and team members can choose their tasks accordingly. To manage this process effectively, use Trello or GitHub Projects. These tools allow you to create task boards, track progress, and keep everyone organized. If your project is stored in GitHub, GitHub Projects is particularly useful as it integrates directly with your repository, so you do not have to juggle multiple platforms. A great feature of GitHub Projects is the ability to create issues and assign them to team members, helping everyone stay on top of their tasks and track bugs or problems as they arise.
 ![Github projects](/public/assets/Backlog.png)
 
-After completing the development phase, the next step is deployment. We chose Nginx, a popular option for serving React apps. However, deployment brought new challenges. One of the most frustrating issues was that React Router would break whenever we refreshed the browser, causing a 404 error. At the time, we couldn’t figure out how to fix it. It wasn’t until a year later that I learned the solution: configuring Nginx with an nginx.conf file to handle routing correctly. Unfortunately, back then, we didn’t have that knowledge
+After completing the development phase, the next step was deployment. We created a Docker container to serve the web application and chose Nginx, a popular option for serving React apps. However, deployment brought new challenges. One of the most frustrating issues was that React Router would break whenever we refreshed the browser, causing a 404 error. At the time, we couldn’t figure out how to fix it. It wasn’t until a year later that I learned the solution: configuring Nginx with an nginx.conf file to handle routing correctly. Unfortunately, back then, we didn’t have that knowledge
 
 A year later, looking back, I can clearly see the mistakes we made and the practices we could have improved. Hence, I want to share what I would do differently if I were to start my first full-stack project again.
 
