@@ -7,7 +7,7 @@ coverImage: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w
 author: "Miguel Aréjula Aísa"
 authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
 authorUrl: "https://github.com/Arejula11"
-draft: true
+draft: false
 language: "en"
 keywords: ["React", "Node.js","Express", "MongoDB", "full-stack", "front-end", "back-end", "web", "first project", "Trello", "GitHub Projects", "Postman", "Figma", "Nginx", "React Router", "version control", "GitHub", "branches", "pull requests"]
 ---
