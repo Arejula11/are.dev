@@ -1,13 +1,13 @@
 ---
 title: "Create your first API REST with Express.js"
-description: "Learn how to set up your first API REST using Express.js. This beginner-friendly guide walks you through the fundamentals, from routing requests to handling authentication and rate limiting."
+description: "Learn how to set up your first API REST using Express.js. This beginner-friendly guide walks you through the fundamentals, from routing requests to structuring your code with controllers, models, and views."
 tags: ["Learning"]
-publishedDate: "2025-03-15 18:00"
+publishedDate: "2025-03-16 21:00"
 coverImage: "/assets/Express-guide.png"
 author: "Miguel Aréjula Aísa"
 authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
 authorUrl: "https://github.com/Arejula11"
-draft: true
+draft: false
 language: "en"
 keywords: ["Express", "API REST", "Guide", "Learning", "Express.js","Node.js", "Web] Development", "Backend", "tutorial"]
 ---
@@ -206,7 +206,7 @@ This code defines a simple Jade template that extends the layout file (layout.ja
 
 ### Render the View
 
-To render the view in our API REST, we need to update the welcomeMessage function in the ApiController. Modify the function to render the welcome.jade view:
+To render the view in our API REST, we need to update the welcomeMessage function in the ApiController. Modify the function to render the **welcome.jade** view:
 
 ```javascript
 exports.welcomeMessage = function(req, res) {
@@ -227,5 +227,7 @@ In this guide, we built a basic **API REST** using **Express.js**, learning how 
 - Use **views** to render responses in a user-friendly format. 
 
 Express.js is a powerful framework that simplifies the process of building APIs, providing a robust set of tools and features. As you continue to develop your API REST, you can explore additional functionalities such as **authentication**, **rate limiting**, **logging**, and **error handling**. These features will help you create secure, scalable, and reliable APIs that meet the needs of your users. 
+
+To jump-start your project with a pre-configured Express.js setup, check out my ready-to-use template: [Express template](https://github.com/Arejula11/templateExpress.git). This template includes a basic Express application structure with MVC organization, ready-to-use controllers, models, and views.
 
 So what are you waiting for? Start building your API REST today!
