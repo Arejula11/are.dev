@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://are-dev.vercel.app/',
+  site: 'https://are-dev.es/',
   devToolbar: {
     enabled: false
   },
