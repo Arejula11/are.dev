@@ -3,7 +3,7 @@ title: "Create your first API REST with Express.js"
 description: "Learn how to set up your first API REST using Express.js. This beginner-friendly guide walks you through the fundamentals, from routing requests to structuring your code with controllers, models, and views."
 tags: ["Learning"]
 publishedDate: "2025-03-16 21:00"
-coverImage: "/assets/Express-guide.png"
+coverImage: "/assets/Express-guide.webp"
 author: "Miguel Aréjula Aísa"
 authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
 authorUrl: "https://github.com/Arejula11"
