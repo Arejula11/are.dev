@@ -2,12 +2,12 @@
 title: "Create your first Astro project"
 description: "Learn how to set up your first Astro project. A step-by-step guide to create a new Astro project."
 tags: ["Learning"]
-publishedDate: "2025-03-23 21:00"
-coverImage: ""
+publishedDate: "2025-03-23 23:00"
+coverImage: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 author: "Miguel Aréjula Aísa"
 authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
 authorUrl: "https://github.com/Arejula11"
-draft: true
+draft: false
 language: "en"
 keywords: ["Astro", "UI", "Guide", "Learning", "React", "Vue","Node.js", "Web Development", "Frontend", "tutorial"]
 ---
@@ -157,21 +157,10 @@ export default {
 
 With SSR, you can fetch data dynamically and render content at runtime, providing flexibility for applications that rely on APIs or databases.
 
-## Add a New Static Route
+## Dynamic Routes
 
-Static routes are simple pages that do not change dynamically. Create a new file, `src/pages/static.astro`:
-
-```astro
----
----
-<h1>Static Route</h1>
-```
-
-This page will be available at `http://localhost:4321/static`.
-
-## Add a New Page with a Dynamic Route
-
-Dynamic routes allow pages to generate content based on parameters. To create a dynamic blog post route, add `src/pages/post/[id].astro`:
+### Dynamic Routes at Build Time
+Dynamic routes allow pages to generate content based on parameters. To create a dynamic blog post route, add *src/pages/post/[id].astro*:
 
 ```astro
 ---
@@ -183,16 +172,110 @@ const { id } = Astro.props;
 <h1>Post {id}</h1>
 ```
 
-This will create two routes: `/post/1` and `/post/2`. The `getStaticPaths` function tells Astro which pages to generate at build time. If you need runtime-generated pages, you can use SSR instead.
+This will create two routes: /post/1 and /post/2. The getStaticPaths function tells Astro which pages to generate at build time.
 
-By combining static and dynamic routing, layouts, and components, Astro gives you a powerful yet simple way to structure your projects efficiently.
+### Dynamic Routes at Runtime
+
+In contrast, if you don't know the possible paths beforehand, you can generate pages dynamically at runtime using Astro's server-side rendering (SSR). Instead of getStaticPaths, you can access route parameters directly in an API-driven or dynamic environment:
 
 ```astro
 ---
-export async function getStaticPaths() {
-  return [{ params: { id: '1' } }, { params: { id: '2' } }];
-}
 const { id } = Astro.props;
 ---
 <h1>Post {id}</h1>
 ```
+
+With this approach, pages are generated on demand when a user accesses them, which is useful for dynamic content such as user profiles or real-time data.
+
+![Dynamic Routes](/assets/astro-guide/DynamicRoutes.webp)
+
+### When to Use Static vs. Runtime Routes
+
+Use getStaticPaths when you have a known set of paths that don’t change frequently. This ensures faster page loads as the routes are pre-built during deployment.
+
+Use runtime-generated routes when the number of pages is unknown or dynamic (e.g., user-generated content, database-driven pages). This allows new pages to be served instantly without rebuilding the site.
+
+By combining static and dynamic routing, layouts, and components, Astro provides a powerful and flexible way to structure your projects efficiently.
+
+
+## Dynamic Paths with Astro (@components, @layouts, @pages)
+
+Dynamic paths in Astro allow you to reference files and components using aliases instead of relative paths. This improves maintainability and readability, especially in larger projects. For example, instead of using:
+
+```astro
+import Button from '../../components/Button.astro';
+```
+
+You can define a path alias and use:
+
+```astro
+import Button from '@components/Button.astro';
+```
+
+### Why Are Dynamic Paths Useful?
+
+- Improved Code Readability: Avoids long and complex relative imports.
+- Easier Refactoring: Changing the project structure becomes simpler as paths remain consistent.
+- Better Organization: Keeps imports clean and structured, especially in component-heavy projects.
+
+To enable dynamic paths, configure them in *tsconfig.json*:
+
+```json
+{
+  "compilerOptions": {
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@pages/*": ["src/pages/*"]
+    }
+  }
+}
+```
+
+After this setup, you can import files using the defined aliases throughout your Astro project, making development smoother and more efficient. Now you can use:
+
+```astro
+import Button from '@components/Button.astro';
+```
+
+## Astro + Tailwind CSS
+Tailwind CSS is a utility-first CSS framework that allows developers to style applications efficiently by using predefined classes directly in the markup. Unlike traditional CSS frameworks that rely on predefined components, Tailwind provides low-level utility classes that enable highly customizable designs without writing custom CSS. This approach simplifies styling, reduces CSS file sizes, and enhances maintainability. Tailwind works seamlessly with Astro, making it easy to create visually appealing and responsive websites. To use it in your Astro project, follow the steps described in the official [Tailwind documentation](https://tailwindcss.com/docs/installation/framework-guides/astro).
+
+Then you can start using Tailwind classes directly in your Astro components:
+
+```astro
+---
+import '../styles/global.css';
+---
+<div class="bg-gray-100 p-4">
+  <h1 class="text-2xl font-bold text-blue-500">Hello, Astro!</h1>
+  <p class="text-gray-700">Welcome to my Astro project.</p>
+</div>
+```
+Furthermore you can set up your styles in *global.css* adding the following code:
+
+```css
+@theme {
+    --color-primary: #f5c242;
+    --color-secondary: #4b42f5;
+    --color-accent: #fff;
+    --color-accent-dark: #9B9B9B;
+    --color-text: #000;
+````
+This will allow you to use these custom colors in your components:
+
+```astro
+---
+import '../styles/global.css';
+---
+<div class="bg-primary p-4">
+  <h1 class="text-2xl font-bold text-accent">Hello, Astro!</h1>
+  <p class="text-text">Welcome to my Astro project.</p>
+</div>
+```
+
+## Conclusion
+
+If you want to kickstart your Astro project with a fully configured and optimized setup, check out my [GitHub repository](https://github.com/Arejula11/templateAstro.git). This template includes best practices, a predefined project structure, and essential integrations, making it easier to start building your website efficiently. Whether you're a beginner or an experienced developer, this template can save you time and effort by providing a solid foundation for your Astro projects.
+
+I hope this guide has helped you understand the basics of Astro and how to create your first project. By leveraging Astro's features, you can build fast, content-focused websites with ease. Experiment with different integrations, layouts, and components to create unique and engaging web experiences. Happy coding!
