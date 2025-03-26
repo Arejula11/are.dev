@@ -261,6 +261,7 @@ Furthermore you can set up your styles in *global.css* adding the following code
     --color-accent: #fff;
     --color-accent-dark: #9B9B9B;
     --color-text: #000;
+}
 ````
 This will allow you to use these custom colors in your components:
 
