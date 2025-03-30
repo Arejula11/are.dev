@@ -36,6 +36,10 @@ In this post, I want to share a curated list of my favorite VS Code shortcuts �
 - **⌘B** — Toggle sidebar 
 - **⌘⌥B** — Toggle secondary sidebar
 - **⌘J** — Toggle bottom panel 
+- **⌘⌃→** — Move focus to right editor group
+- **⌘⌃←** — Move focus to left editor group
+- **⌘⌥→** - Move focus to next editor group
+- **⌘⌥←** - Move focus to previous editor group 
 
 ### Command Palette
 - **⌘⇧P** — Open command palette

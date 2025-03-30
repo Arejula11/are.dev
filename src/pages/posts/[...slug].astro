@@ -29,6 +29,18 @@ const allPosts = await getCollection("posts", ({ data }) => data.draft !== true)
 
 // Filter out current post and limit to 2 posts for "More Posts" section
 const filterPosts = allPosts.filter((post) => post.slug !== entry.slug && post.data.language === lang);
+// Sort posts by published date in descending order
+filterPosts.sort((a, b) => {
+  const dateA = new Date(a.data.publishedDate).getTime();
+  const dateB = new Date(b.data.publishedDate).getTime();
+  return dateB - dateA;
+});
+// Delete current post from the list
+const currentPostIndex = filterPosts.findIndex((post) => post.slug === entry.slug);
+if (currentPostIndex !== -1) {
+  filterPosts.splice(currentPostIndex, 1);
+}
+// Limit to 2 posts for "More Posts" section
 const posts = filterPosts.slice(0, 2);
 
 // Render content for the current post
