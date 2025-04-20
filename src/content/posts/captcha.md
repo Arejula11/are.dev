@@ -7,23 +7,29 @@ coverImage: "https://images.unsplash.com/photo-1696013910376-c56f76dd8178?q=80&w
 author: "Miguel Aréjula Aísa"
 authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
 authorUrl: "https://github.com/Arejula11"
-draft: true
+draft: false
 language: "en"
 keywords: ["Astro", "reCAPTCHA", "forms", "spam protection", "recaptcha v3", "frontend security", "guide", "Google reCAPTCHA"]
 ---
 
-Forms are one of the most common entry points for spam on any website. If you’re using Astro to build static sites, you might be handling form submissions through APIs or third-party services—but even then, bots can still target your form endpoints.
+Spam is a persistent threat to any website with public forms. As bots get more advanced, protecting your site without ruining user experience becomes critical. Fortunately, **reCAPTCHA v3** offers a modern solution that works silently in the background, evaluating user behavior and assigning a confidence score to each submission.
 
-reCAPTCHA v3 offers a silent way to detect and block spam without requiring user interaction. In this guide, you'll learn how to integrate it into an Astro project and validate the token server-side to ensure that only real users can submit your forms.
+In this post, you’ll learn how to integrate reCAPTCHA v3 into your **Astro** site to secure your forms without introducing annoying interactions like image puzzles or checkboxes.
 
-## What are reCAPTCHAs?
-reCAPTCHA is a free service from Google that helps protect your website from spam and abuse. It uses advanced risk analysis techniques to tell humans and bots apart. Probably you have seen the "I am not a robot" checkbox or the image selection challenges. This is the most common version, but reCAPTCHA v3 works differently. It runs in the background and assigns a score to each request based on its likelihood of being a bot. The higher the score, the more likely it is that the request is from a human.
-## Why reCAPTCHA v3?
-reCAPTCHA v3 is designed to be invisible to users. It doesn't require any user interaction, which means it won't interrupt the user experience. Instead, it runs in the background and assigns a score, from 0 to 10, based on the user's behavior on your site. This makes it ideal for protecting forms without annoying your users.
+## Understanding reCAPTCHA v3
 
-## Setting Up reCAPTCHA v3
-First of all, you need to have a functional Astro project. If you don't have one, you can follow my [Astro guide](https://are-dev.es/posts/astroguide). Then you need to create a basic form. You can use the following code as a starting point, which includes a simple registration form with username, email, password, and confirm password fields. It also uses Tailwind CSS for styling, so make sure you have it set up in your project.
+**reCAPTCHA v3** is a security service from Google that distinguishes real users from bots by analyzing interaction patterns. Instead of requiring user input, it runs in the background and gives each session a score between *0.0* (likely a bot) and *1.0* (very likely a human). This allows you to evaluate whether a submission is trustworthy without asking users to click anything.
 
+To get started, you’ll need a [Google reCAPTCHA site key and secret key](https://www.google.com/recaptcha/admin/create). Choose **reCAPTCHA v3** when registering your site.
+
+##  Creating a Secure Form in Astro
+
+Let’s create a simple registration form in Astro and enhance it with reCAPTCHA v3.
+
+### 1. Building the Form
+First of all, you need to have a functional Astro project. If you don't have one, you can follow my [Astro guide](https://are-dev.es/posts/astroguide).
+
+Then you need to create a basic form. You can use the following code as a starting point, which includes a simple registration form with username, email, password, and confirm password fields. It also uses Tailwind CSS for styling, so make sure you have it set up in your project.
 ```astro
 ---
 import Layout from "../layouts/Layout.astro";
@@ -144,8 +150,6 @@ if (Astro.request.method === "POST") {
                     </div>
                 </div>
 
-                
-
                 {errorMessage && (
                     <div class="text-red-600 text-sm mt-2">
                         {errorMessage}
@@ -170,8 +174,7 @@ You will get a simple form like this:
 ![form](/assets/recaptcha/form.png)
 
 ## Adding reCAPTCHA v3
-Then you need to add reCAPTCHA v3 to your form. To do this, you need to create a Google reCAPTCHA account and get your site key and secret key. You can do this by going to the [Google reCAPTCHA admin console](https://www.google.com/recaptcha/admin/create) and following the instructions.
-Once you have your site and secret keys, copy them in a .env file so you will be the only one with access to them. Then, you can add the reCAPTCHA to your form. You need to add this code before the *<Layout>* tag in your form component, substituting **<SITE-KEY>** with your site key:
+In your *<head>*, include the reCAPTCHA v3 script:
 
 ```astro
 <head>
@@ -205,7 +208,7 @@ This version of reCAPTCHA doesn't require any user interaction, so we will hide 
   }
 </script>
 ```
-This code will execute reCAPTCHA v3 when the form is submitted and add the token to the form data.  The token will be validated before the rest of the form is processed. This is important because if the token is invalid, the form will not be submitted and the rest of the form will not be processed.
+This code will execute reCAPTCHA v3 when the form is submitted and add the token to the form data.  The token will be validated before the rest of the form is processed. This is important because if the token is invalid, the form will not be submitted and the rest of the form will not be processed. It is important to replace *<SITE-KEY>* with your actual site key.
 ## Validating the reCAPTCHA Token
 
 ```js
@@ -257,10 +260,8 @@ if (Astro.request.method === "POST") {
     try {
         // Get the form data
         const data = await Astro.request.formData();
-
         const recaptchaToken = data.get("recaptcha");
         // Verify the reCAPTCHA token
-         // Verify the reCAPTCHA token
          const recaptchaURL = "https://www.google.com/recaptcha/api/siteverify";
         const requestHeaders = {
             "Content-Type": "application/x-www-form-urlencoded",
@@ -443,3 +444,20 @@ Now the form is protected with reCAPTCHA v3, check that you have the reCAPTCHA b
 
 Each time the form is submitted, the reCAPTCHA token will be generated and sent to the server for validation. If the token is valid, the form will be processed as usual. If the token is invalid or the score is too low, an error message will be displayed. The message with the captcha result will look like this:
 ![recaptcha result](/assets/recaptcha/captcha_result.png)
+
+## Conclusion
+
+Securing forms doesn't have to mean frustrating your users. With reCAPTCHA v3, you can seamlessly add a powerful layer of protection to your Astro site without compromising the experience.
+
+You now have a fully functional example of how to:
+- Create a form in Astro
+- Add reCAPTCHA v3 to it
+- Verify submissions server-side
+
+This approach helps prevent spam and bot attacks with minimal effort and no UX disruption. From here, you can expand your implementation with:
+- Score-based rate limiting
+- Logging suspicious activity
+- Using reCAPTCHA actions to differentiate between multiple types of interactions
+
+If you want to keep your forms clean and your users happy, reCAPTCHA v3 is a great tool in your toolkit.
+Feel free to reach out if you have any questions or need further assistance. Happy coding!
