@@ -7,7 +7,7 @@ coverImage: "/assets/git/miniatura.png"
 author: "Miguel Aréjula Aísa"
 authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
 authorUrl: "https://github.com/Arejula11"
-draft: true
+draft: false
 video: "https://www.youtube.com/embed/qRirdnD5TM4"
 videoTitle: "Curso básico de Git: Todo lo que necesitas saber en un solo vídeo [ES]"
 language: "es"
