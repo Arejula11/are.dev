@@ -13,7 +13,7 @@ keywords: ["Astro", "UI", "Guía", "Aprendizaje", "React", "Vue", "Node.js", "De
 ---
 
 ## Introducción: ¿Qué es Astro?
-Astro es un framework web moderno diseñado para construir sitios rápidos enfocados en contenido. A diferencia de los frameworks tradicionales cargados de JavaScript, Astro envía un JavaScript mínimo al cliente por defecto, lo que mejora el rendimiento y la experiencia del usuario. Astro es perfecto para sitios estáticos, blogs, portafolios y otros proyectos centrados en el contenido. Sin embargo, también admite rutas dinámicas y renderizado del lado del servidor (SSR) para aplicaciones más complejas. 
+Astro es un framework web moderno diseñado para construir sitios rápidos enfocados en contenido. A diferencia de los frameworks tradicionales cargados de JavaScript, Astro envía un JavaScript mínimo al cliente, lo que mejora el rendimiento y la experiencia del usuario. Astro es perfecto para sitios estáticos, blogs, portafolios y otros proyectos centrados en el contenido. Sin embargo, también admite rutas dinámicas y renderizado del lado del servidor (SSR) para aplicaciones más complejas. 
 
 ## ¿Por qué Astro?
 Astro ofrece varias ventajas, entre ellas:
