@@ -82,7 +82,7 @@ El enfoque modular de Astro te permite gestionar eficientemente diferentes aspec
 
 ### Añadir una Nueva Página
 
-Una página en Astro es simplemente un archivo *.astro* colocado dentro del directorio *src/pages/*. Para crear una página "Acerca de", añade un nuevo archivo *src/pages/about.astro* con el siguiente contenido:
+Una página en Astro es simplemente un archivo *.astro* colocado dentro del directorio *src/pages/*. Para crear una página *About*, añade un nuevo archivo *src/pages/about.astro* con el siguiente contenido:
 
 ```astro
 ---
@@ -104,7 +104,7 @@ export let text;
 <h1>This is my first component</h1>
 ```
 
-Ahora puedes usar este componente en tu página "Acerca de" importándolo y pasando una propiedad:
+Ahora puedes usar este componente en tu página *About* importándolo y pasando una propiedad:
 
 ```astro
 ---
@@ -115,7 +115,7 @@ import Title from '../components/Title.astro';
 
 ### Añadir un Nuevo Layout
 
-Los layouts proporcionan una estructura consistente entre varias páginas. Un layout típico incluye elementos comunes como encabezados y pies de página. Crea `src/layouts/MainLayout.astro`:
+Los layouts proporcionan una estructura consistente entre varias páginas. Un layout típico incluye elementos comunes como encabezados y pies de página. Crea *src/layouts/MainLayout.astro*:
 
 ```astro
 ---
@@ -131,7 +131,7 @@ export let title;
 </html>
 ```
 
-Ahora, para usar este layout en nuestra página *About*, modificamos `src/pages/about.astro`:
+Ahora, para usar este layout en nuestra página *About*, modificamos *src/pages/about.astro*:
 
 ```astro
 ---
@@ -142,11 +142,11 @@ import MainLayout from '../layouts/MainLayout.astro';
 </MainLayout>
 ```
 
-Esto asegura que todas las páginas que usan `MainLayout.astro` compartan la misma estructura, facilitando el mantenimiento.
+Esto asegura que todas las páginas que usan *MainLayout.astro* compartan la misma estructura, facilitando el mantenimiento.
 
 ## Renderizado del Lado del Servidor (SSR)
 
-Astro admite SSR, lo que permite generar páginas dinámicamente en lugar de durante la compilación. Para habilitar SSR, modifica `astro.config.mjs`:
+Astro admite SSR, lo que permite generar páginas dinámicamente en lugar de durante la compilación. Para habilitar SSR, modifica *astro.config.mjs*:
 
 ```js
 export default {
