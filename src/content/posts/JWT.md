@@ -3,7 +3,7 @@ title: "Introduction to Authentication in Node.js with JWT"
 description: "Learn how to implement JWT authentication in a Node.js application with Express.js. This beginner-friendly guide walks you through creating login routes, generating JWTs, and securing your APIs."
 tags: ["Learning"]
 publishedDate: "2025-04-13 19:00"
-coverImage: "https://plus.unsplash.com/premium_photo-1681487746049-c39357159f69?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+coverImage: "https://images.unsplash.com/photo-1609675036792-7498858bfb9c?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 author: "Miguel Aréjula Aísa"
 authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
 authorUrl: "https://github.com/Arejula11"
