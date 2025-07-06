@@ -2,7 +2,7 @@
 title: "PlayBeat: Music Collaboration Platform"
 description: "PlayBeat is a full-stack web application designed to facilitate music collaboration among artists. Built with Astro, Express, PostgreSQL and Azure. It offers features like real-time playlist management, upload and sharing of music files and a user-friendly interface for artists to connect and collaborate."
 tags: ["Portfolio"]
-publishedDate: "2025-07-2 17:00"
+publishedDate: "2025-07-6 17:00"
 coverImage: "/assets/playbeat/home.png"
 author: "Miguel Aréjula Aísa"
 authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
