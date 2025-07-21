@@ -187,7 +187,8 @@ This project taught me much more than just how to build a full-stack application
 Above all, I learned how to design and deliver a usable, high-impact tool in a domain where precision and clarity are essential healthcare. This project took me through the entire software development lifecycle: from gathering real user requirements and prototyping, to designing architecture, implementing features, testing, and validating the final product. It taught me how software engineers work in practice balancing technical decisions with user needs, collaborating across disciplines, and building systems that are not just functional, but truly valuable in real-world settings. The result is a fully operational and validated platform that can improve how clinical pathways are managed from day one in a hospital environment.
 
 
+You can find the complete source code and the documentation for this project on my GitHub repository: [TFG](https://github.com/Arejula11/TFG)
 
-If you'd like to see how the system works in action, check out the following video where I present the project and demonstrate its features:
+And if you'd like to see how the system works in action, check out the following video where I present the project and demonstrate its features:
 
 
