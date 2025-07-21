@@ -12,11 +12,6 @@ language: "en"
 keywords: ["astro", "oauth", "google", "github", "authentication", "login", "portfolio", "playbeat", "music", "web development", "web app", "full stack", "astro framework", "node.js", "express", "api", "music collaboration", "playlist management", "postgresql", "azure", "real-time", "file upload", "sharing", "user interface", "artists"]
 ---
 
-Here’s a polished, English blog post draft for **PlayBeat**, tailored to highlight that it's your first full‑stack project, developed in collaboration with seven teammates as part of a university course:
-
----
-
-
 PlayBeat is a full-stack web application I developed with seven classmates during our “Proyecto Software” course at the University of Zaragoza (Spring 2024). The frontend is built with Astro and deployed on Vercel, while the backend uses Express and PostgreSQL, deployed on Azure. The platform enables artists to collaborate on playlists in real-time, upload and share music tracks and connect through an intuitive interface.
 
 All the code is available in our group GitHub organization: [UNIZAR-30226-2024-03](https://github.com/UNIZAR-30226-2024-03)
