@@ -1,7 +1,7 @@
 ---
 title: "Adding Google & GitHub Login to Your Astro Project"
 description: "Want to let users sign in with their Google or GitHub account? This step-by-step guide shows you how to implement OAuth authentication in an Astro project using modern best practices."
-tags: ["Learning"]
+tags: ["Learn"]
 publishedDate: "2025-05-18 17:00"
 coverImage: "https://images.unsplash.com/photo-1678483789111-3a04c4628bd6?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 author: "Miguel Aréjula Aísa"

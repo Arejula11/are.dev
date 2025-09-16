@@ -1,7 +1,7 @@
 ---
 title: "Git for Beginners: The Essential Guide"
 description: "Learn Git from scratch with this basic guide. Understand the fundamental concepts and how to integrate it with GitHub and VSCode."
-tags: ["Learning"]
+tags: ["Learn"]
 publishedDate: "2025-04-27 18:00"
 coverImage: "/assets/git/miniatura.png"
 author: "Miguel Aréjula Aísa"

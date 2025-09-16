@@ -1,7 +1,7 @@
 ---
 title: "My Favorite VS Code Shortcuts for macOS"
 description: "My collection of Visual Studio Code shortcuts to boost productivity."
-tags: ["Tools"]
+tags: ["Setup"]
 publishedDate: "2025-03-3 13:00"
 coverImage: "/assets/VSCode-Shorcuts.webp"
 galleryImages: []

@@ -1,7 +1,7 @@
 ---
 title: "Protecting Astro Forms with reCAPTCHA v3"
 description: "Learn how to integrate Google reCAPTCHA v3 into your Astro site to prevent spam without annoying your users. A practical guide to secure static form submissions."
-tags: ["Learning"]
+tags: ["Learn"]
 publishedDate: "2025-04-20 19:00"
 coverImage: "https://images.unsplash.com/photo-1696013910376-c56f76dd8178?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 author: "Miguel Aréjula Aísa"

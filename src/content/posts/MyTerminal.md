@@ -1,7 +1,7 @@
 ---
 title: "My Terminal Configurations"
 description: "My collection of Terminal configurations to boost productivity and enhance its appearance."
-tags: ["Configurations"]
+tags: ["Setup"]
 publishedDate: "2025-03-03 15:00"
 coverImage: "/assets/MyTerminal.webp"
 galleryImages: []

@@ -1,7 +1,7 @@
 ---
 title: "Integration Testing, Why and How to Do It"
 description: "Learn what integration testing is, why it’s essential for building reliable applications, and how to perform it manually with Postman. Then take it a step further by automating your tests using Postman collections and Jest in a Node.js environment."
-tags: ["Learning"]
+tags: ["Learn"]
 publishedDate: "2025-05-4 23:00"
 coverImage: "https://images.unsplash.com/photo-1660836814985-8523a0d713b5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 author: "Miguel Aréjula Aísa"

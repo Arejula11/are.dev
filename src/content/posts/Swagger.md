@@ -1,7 +1,7 @@
 ---
 title: "Mastering API Documentation: Why It Matters and How to Use Swagger with Express"
 description: "API documentation is the backbone of seamless software integration and developer collaboration. In this guide, wou will explore why API documentation is crucial and how Swagger can simplify and standardize the process in Express applications."
-tags: ["Learning"]
+tags: ["Learn"]
 publishedDate: "2025-03-30 23:00"
 coverImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 author: "Miguel Aréjula Aísa"

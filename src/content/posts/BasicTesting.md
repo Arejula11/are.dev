@@ -1,7 +1,7 @@
 ---
 title: "Testing for Beginners: Getting Started with Jest in Node.js"
 description: "Learn how to write your first unit tests using Jest in a Node.js project. This beginner-friendly guide covers setup, writing basic tests, testing async code, and more."
-tags: ["Learning"]
+tags: ["Learn"]
 publishedDate: "2025-04-6 19:00"
 coverImage: "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=600"
 author: "Miguel Aréjula Aísa"
