@@ -1,6 +1,6 @@
 ---
 title: "AgroNET: Smart Agriculture Platform"
-description: "AgroNET is a full-stack web application designed to modernize agricultural practices through smart features and real-time data integration. Built with Astro, Node.js, and AWS, it offers crop management, weather tracking, and community forums for farmers and agronomists."
+description: "AgroNET is a full-stack web application designed to modernize agricultural practices through smart features and real-time data integration. Built with Astro, React, Node.js and AWS, it offers crop management, weather tracking, and community forums for farmers and agronomists."
 tags: ["Portfolio"]
 publishedDate: "2025-05-25 17:00"
 coverImage: "/assets/agronet/landing.webp"
