@@ -32,7 +32,7 @@ A modular monolith is still a single deployable app, but with strong internal bo
 **Microservices**
 Microservices take separation to the next level. Instead of one deployable unit, you have a network of independent services, each with its own runtime, database and deployment pipeline. Services communicate over the network, usually via HTTP or messaging, and can be built, scaled and deployed independently.
 
-![Diagram comparing Monolith, Modular Monolith, and Microservices architectures](/public/assets/MonolithVSmicroservices.webp)
+![Diagram comparing Monolith, Modular Monolith, and Microservices architectures](/assets/MonolithVSmicroservices.webp)
 
 ### Key Dimensions of Comparison
 
