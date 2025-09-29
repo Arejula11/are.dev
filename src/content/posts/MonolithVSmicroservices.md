@@ -39,6 +39,19 @@ Microservices take separation to the next level. Instead of one deployable unit,
 Now that we’re clear on the terminology, let’s stack **modular monoliths** and **microservices** side by side.
 Here’s how they differ across the factors that most teams care about:
 
+<div class="overflow-x-auto">
+
+| **Aspect**                 | **Modular Monolith**                                                                 | **Microservices**                                                                                    |
+| -------------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| **Deployment**             | Single build and deployment pipeline. One artifact to ship and monitor.              | Each service is deployed independently, requiring multiple pipelines, monitoring and coordination.  |
+| **Team Structure**         | Works well with small to medium teams sharing the same repo and code conventions.    | Supports large, autonomous teams who own their own services and release cycles.                      |
+| **Data Management**        | Usually one shared database (with schema boundaries per module).                     | Each service manages its own database, ensuring strong data ownership but complicating transactions. |
+| **Scaling**                | Scale the *whole* application together, even if only one module needs more resources. | Scale individual services independently, optimizing resources for hotspots.                          |
+| **Operational Complexity** | Lower infrastructure overhead: fewer servers, simpler CI/CD, easier debugging.       | Higher operational overhead: service discovery, load balancing, network latency, observability.      |
+| **Technology Freedom**     | Typically one language/framework for consistency.                                    | Each service can use different languages, frameworks or databases (but at the cost of complexity).  |
+
+</div>
+
 
 ###  When to Choose a Modular Monolith
 
