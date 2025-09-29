@@ -12,7 +12,7 @@ language: "en"
 keywords: ["astro", "oauth", "google", "github", "authentication", "login"]
 ---
 
-# Adding Google & GitHub Login to Your Astro Project
+
 In this tutorial, we will implement OAuth authentication in an Astro project using Google and GitHub as providers. We will use Auth.js, a powerful authentication library that simplifies the process of adding authentication to your web applications. By the end of this tutorial, you will have a fully functional authentication system that allows users to sign in with their Google or GitHub accounts.
 
 Before we begin, make sure you have your Astro project set up. If you don't know how to do this, check out my guide on [Create your first Astro project](https://are-dev.es/posts/astroguide). Once you have your project ready, you can add authentication to your application. Besides, its important that your project needs to have server-side rendering (SSR) enabled and an adapter configured. To set up this, you can follow the instructions in the [Astro documentation](https://docs.astro.build/en/guides/on-demand-rendering/#enabling-ssr-in-your-project).
