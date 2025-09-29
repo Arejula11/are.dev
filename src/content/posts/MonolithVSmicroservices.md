@@ -52,7 +52,6 @@ Here’s how they differ across the factors that most teams care about:
 
 </div>
 
-
 ###  When to Choose a Modular Monolith
 
 For many teams, a modular monolith is the sweet spot, especially at the beginning of a project.
