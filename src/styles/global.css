@@ -41,7 +41,7 @@
       -webkit-overflow-scrolling: touch; /* Su
       aviza el desplazamiento en dispositivos iOS */
     }
-    code {
+    pre {
       display: block;
       white-space: pre-wrap;
       overflow-x: auto;
