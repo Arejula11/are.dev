@@ -44,14 +44,15 @@
   }
 
   
-  pre {
+  pre.astro-code {
     display: block;
     white-space: pre-wrap;
     overflow-x: auto;
     font-size: 0.9rem;
     max-width: 100vw;
     word-break: break-word;
-    background-color: antiquewhite;
+    background-color: #426d98 ;
+    color: #e1e4e8 ;
   }
   
   /* CSS */
