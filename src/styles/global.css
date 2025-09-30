@@ -32,6 +32,17 @@
     pre {
       white-space: pre-wrap;
     }
+    table {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch; /* Suaviza el desplazamiento en dispositivos iOS */
+    }
+    code {
+      display: block;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
   }
 
   

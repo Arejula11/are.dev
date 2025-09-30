@@ -39,7 +39,7 @@ Microservices take separation to the next level. Instead of one deployable unit,
 Now that we’re clear on the terminology, let’s stack **modular monoliths** and **microservices** side by side.
 Here’s how they differ across the factors that most teams care about:
 
-<div class="overflow-x-auto">
+<div class="overflow-x-auto ">
 
 | **Aspect**                 | **Modular Monolith**                                                                 | **Microservices**                                                                                    |
 | -------------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
