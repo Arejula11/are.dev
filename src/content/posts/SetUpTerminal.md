@@ -22,7 +22,7 @@ Before diving into configurations and fancy prompts, it’s worth understanding 
 
 ## Choosing Your Shell
 
-The shell is the heart of your terminal experience. It’s what runs your commands, scripts, and shortcuts, so picking one that fits your style and workflow makes a big difference. Here’s a quick overview of the most common options on Unix-based systems:
+The shell is the heart of your terminal experience. It runs your commands, scripts, and shortcuts, so picking one that fits your style and workflow is crucial. On Unix systems, you’ll often find Bash as the default, but many developers prefer Zsh or Fish for their extra features and customization options. All of these shells are POSIX-compliant, meaning they follow standardized rules for command syntax, environment variables, and scripting. This ensures that scripts and configurations you create are portable across macOS, Linux and other Unix-based systems.
 
 **Bash**
 The default on most Linux distributions (and still available on macOS). Bash is reliable, well-documented, and supported everywhere. If you’re new to the terminal, it’s a safe starting point, though it can feel a bit plain compared to newer shells.
