@@ -77,7 +77,7 @@ Personalizar tu terminal lleva tiempo y esfuerzo, por lo que es crucial asegurar
 
 Al mantener tu *.bashrc*, *.zshrc* o cualquier script personalizado en un repositorio con control de versiones, puedes rastrear cambios, compartir configuraciones entre dispositivos y colaborar con otros. También simplifica el proceso de reconfiguración de tu terminal: con un simple *git clone*, puedes tener todo tu entorno listo en cuestión de minutos.
 
-Recomiendo mucho crear un repositorio dedicado para tus configuraciones del terminal. Si deseas ver mis ficheros de configuración, puedes encontrarlos [aquí](https://github.com/Arejula11/prompt_exit_status_bash_and_zsh).
+Recomiendo mucho crear un repositorio dedicado para tus configuraciones del terminal. Si deseas ver mis ficheros de configuración, puedes encontrarlos [aquí](https://github.com/Arejula11/dotfiles).
 
 Recientemente me han recomendado una herramienta llamada **chezmoi**, esta permite gestionar los ficheros de configuración, conocidos como  *.dotfiles*, entre diversas máquinas de una forma rápida y sencilla. Promete poder descargar e instalar estos ficheros de configuración de una forma rápida y sencilla. Sin duda es una herramienta que reduce significativamente el tiempo de configuración de un nuevo entorno y que estoy deseando probar pronto. Si quieres saber más, puedes leer su documentación oficial [aquí](https://www.chezmoi.io/#should-i-use-chezmoi).
 
