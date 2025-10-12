@@ -9,7 +9,7 @@ authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
 authorUrl: "https://github.com/Arejula11"
 draft: false
 language: "en"
-keywords: []
+keywords: ["vim tutorial", "vim guide", "vim commands", "learn vim", "vim for beginners", "text editor", "vim setup"]
 ---
 
 If you’ve ever seen a developer moving lightning-fast in their terminal and wondered how they’re editing text without touching a mouse; chances are, they’re using Vim.
