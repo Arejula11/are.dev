@@ -240,8 +240,6 @@ If you’re using Warp, the process is slightly different because Warp loads its
 ## Conclusion
 Customizing your terminal is more than just making it look nice, it’s about creating a workspace that boosts productivity, reduces friction and feels personal. By choosing the right shell, tweaking your configuration files, adding themes and plugins and fine-tuning fonts and colors, you can transform your terminal into a tool that works exactly the way you want.
 
-Remember to manage your dotfiles carefully so your setup is portable and easy to replicate across machines. And don’t be afraid to experiment, small changes can make a big difference in usability and comfort. With the tips in this guide, you now have everything you need to build a terminal environment that’s both powerful and enjoyable to use.
-
-
+Remember to manage your dotfiles carefully so your setup is portable and easy to replicate across machines. And don’t be afraid to experiment, small changes can make a big difference in usability and comfort. With the tips in this guide, you now have everything you need to build a terminal environment that’s both powerful and enjoyable to use. Happy coding!
 
 
