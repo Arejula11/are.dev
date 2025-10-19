@@ -2,7 +2,7 @@
 title: "Meet Vim: The Powerful Editor Every Developer Should Know"
 description: "Learn what Vim is, why developers love it and how to master its essential commands to boost your coding productivity."
 tags: ["Learn"]
-publishedDate: "2025-010-12 19:00"
+publishedDate: "2025-10-12 19:00"
 coverImage: "/assets/vim.webp"
 author: "Miguel Aréjula Aísa"
 authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
