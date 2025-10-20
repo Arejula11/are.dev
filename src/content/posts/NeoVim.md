@@ -324,6 +324,8 @@ This example gives you a fully functional, modern Neovim setup that’s easy to 
 
 Practice the basics every day, learn by tweaking your config, explore plugins that improve workflow, stay curious about the community and be patient, mastering Neovim is a rewarding journey.
 
+If you’re new or want a refresher, running the command *:Tutor* inside Neovim is a great way to practice basic motions, commands, and workflows interactively. It’s like having a built-in guide to get comfortable with Vim’s editing philosophy before diving deeper.
+
 ## Wrapping Up
 
 Neovim isn’t just a modernized Vim, it’s a reimagined editor built for today’s workflows. With built-in LSP, Lua configuration and an ever-growing plugin ecosystem, it offers Vim’s timeless efficiency with modern power and polish.
