@@ -3,7 +3,7 @@ title: "Your First Jupyter Notebook in VS Code on macOS"
 description: "Learn how to install Jupyter Notebooks on macOS, set them up in VS Code and start writing interactive Python code for data analysis and visualization."
 tags: ["Setup"]
 publishedDate: "2025-10-26 21:00"
-coverImage: "/assets/jupyterNotebook.png"
+coverImage: "/assets/JupyterNotebook2.png"
 author: "Miguel Aréjula Aísa"
 authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
 authorUrl: "https://github.com/Arejula11"
