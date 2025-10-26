@@ -63,6 +63,70 @@ pre.astro-code.github-dark {
   max-width: 80vw;
 }
 
+/* ============================= */
+/* Clean Blockquote - No italics, no extra quotes */
+/* ============================= */
+
+.prose blockquote {
+  position: relative;
+  background-color: #fff8f0; /* soft orange-tinted background */
+  border-left: 4px solid #ffa500; /* bright orange accent */
+  color: #2c2c2c; /* readable dark text */
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400; 
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  /* Remove Tailwind Typography quotes */
+  quotes: none;
+}
+
+.prose blockquote p::before,
+.prose blockquote p::after {
+  content: none;
+}
+
+.prose blockquote p {
+  margin: 0;
+}
+
+.prose blockquote a {
+  color: #d35400;
+  text-decoration: underline;
+  transition: color 0.2s ease-in-out;
+}
+
+.prose blockquote a:hover {
+  color: #b34700;
+}
+
+
+/* ============================= */
+/* Inline code styling for Markdown (not code blocks) */
+/* ============================= */
+
+.prose :not(pre) > code {
+  background-color: #fff6e8;  /* very light gray background */
+  color: #24292e;             /* almost black text */
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: 'SFMono-Regular', Consolas, 'Roboto Mono', monospace; /* GitHub-style monospace */
+  font-weight: 400;           /* lighter font-weight like GitHub */
+  font-size: 0.875rem;
+  line-height: 1.4;
+  white-space: nowrap;        /* prevents breaking inline code */
+}
+
+.prose :not(pre) > code::before,
+.prose :not(pre) > code::after {
+  content: none; /* remove any pseudo content */
+}
+
+
 
 /* Optional: make code inside more readable */
 pre.astro-code.github-dark code {

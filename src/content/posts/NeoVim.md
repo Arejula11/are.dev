@@ -96,11 +96,11 @@ or
 scoop install neovim
 ```
 
-Alternatively, you can grab the latest *.zip* file from the [official release page](https://github.com/neovim/neovim/releases) and add it to your system’s PATH. To open Neovim, run *nvim* in PowerShell or Command Prompt.
+Alternatively, you can grab the latest `.zip` file from the [official release page](https://github.com/neovim/neovim/releases) and add it to your system’s PATH. To open Neovim, run `nvim` in PowerShell or Command Prompt.
 
 ### First Launch
 
-When you open Neovim for the first time, you’ll notice it looks very similar to Vim, a blank screen waiting for input. That’s because Neovim retains Vim’s modal editing system. You can use all the same basic commands (*i*, *:wq*, *dd*, etc.) right away. The real fun begins when you start customizing it and adding plugins, something Neovim makes much easier than Vim.
+When you open Neovim for the first time, you’ll notice it looks very similar to Vim, a blank screen waiting for input. That’s because Neovim retains Vim’s modal editing system. You can use all the same basic commands (`i`, `:wq`, `dd`, etc.) right away. The real fun begins when you start customizing it and adding plugins, something Neovim makes much easier than Vim.
 
 ## Key Features That Make Neovim Stand Out
 
@@ -130,11 +130,11 @@ Neovim’s greatest strength is its flexibility. You can shape nearly every aspe
 
 ### Configuration Basics
 
-When you first install Neovim, it doesn’t come heavily configured, and that’s a good thing. You get a clean slate to build on. Neovim stores its configuration files in a specific directory depending on your operating system, for Linux / macOS, *~/.config/nvim/*, for Windows, *C:\Users\<your-user>\AppData\Local\nvim\*. Inside that folder, create a file called *init.lua*. This file replaces Vim’s *.vimrc* and allows you to write your configuration in Lua, which is faster and easier to maintain than Vimscript.
+When you first install Neovim, it doesn’t come heavily configured, and that’s a good thing. You get a clean slate to build on. Neovim stores its configuration files in a specific directory depending on your operating system, for Linux / macOS, `~/.config/nvim/`, for Windows, `C:\Users\<your-user>\AppData\Local\nvim\`. Inside that folder, create a file called `init.lua`. This file replaces Vim’s `vimrc` and allows you to write your configuration in Lua, which is faster and easier to maintain than Vimscript.
 
 ### Setting Up lazy.nvim
 
-To manage plugins easily, we’ll use lazy.nvim due to its speed and simplicity. Add this snippet to your *init.lua*:
+To manage plugins easily, we’ll use lazy.nvim due to its speed and simplicity. Add this snippet to your `init.lua`:
 
 ```lua
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -157,7 +157,7 @@ require("lazy").setup({
 })
 ```
 
-Once saved, open Neovim and run *:Lazy sync* to install your plugins.
+Once saved, open Neovim and run `:Lazy sync` to install your plugins.
 
 ### Keybindings
 
@@ -237,7 +237,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 ### Organizing Your Config
 
-Split your configuration into multiple files inside *~/.config/nvim/lua/*:
+Split your configuration into multiple files inside `~/.config/nvim/lua/`:
 
 ```lua
 require("settings")
@@ -248,12 +248,12 @@ require("lsp")
 
 ### Reloading Config
 
-Whenever you edit your configuration, reload it with *:source %* or the shortcut *<leader>r*.
+Whenever you edit your configuration, reload it with `:source %` or the shortcut `<leader>r`.
 
 
 ## My Minimal Neovim Setup
 
-To make things concrete, here’s a minimal but complete Neovim configuration that you can copy into your *init.lua* to get started quickly:
+To make things concrete, here’s a minimal but complete Neovim configuration that you can copy into your `init.lua` to get started quickly:
 
 ```lua
 -- Basic settings
@@ -299,7 +299,7 @@ vim.cmd[[colorscheme Dayfox]]
 require("lualine").setup()
 ```
 
-After adding this to your *init.lua* and running *:Lazy sync*, your Neovim setup will include line numbers, relative line numbers, a modern theme, a status line, and some essential plugins to improve navigation, syntax highlighting, and autocompletion. Here’s how it looks in action:
+After adding this to your `init.lua` and running `:Lazy sync`, your Neovim setup will include line numbers, relative line numbers, a modern theme, a status line, and some essential plugins to improve navigation, syntax highlighting, and autocompletion. Here’s how it looks in action:
 
 ![My Neovim setup](/assets/neovim-config.png)
 
@@ -309,13 +309,13 @@ After adding this to your *init.lua* and running *:Lazy sync*, your Neovim setup
 
 2. **Leader Key** – the leader key acts as a prefix for your custom shortcuts. Setting it to space makes defining intuitive keymaps simple, like Space + w to save or Space + q to quit.
 
-3. **Installing lazy.nvim** – checks if the plugin manager is installed and downloads it automatically if not. Once loaded, you can declare plugins inside *require("lazy").setup()*.
+3. **Installing lazy.nvim** – checks if the plugin manager is installed and downloads it automatically if not. Once loaded, you can declare plugins inside `require("lazy").setup()`.
 
 4. **Essential Plugins** – includes Telescope for fuzzy searching, nvim-treesitter for syntax awareness, nvim-lspconfig for language server integration, nvim-cmp for autocompletion, lualine for a modern status line, and nightfox for a performance-friendly colorscheme.
 
-5. **Applying the Theme** – *vim.cmd[[colorscheme Dayfox]]* sets the color scheme. You can easily switch to other options like nightfox, dawnfox, or nordfox depending on your mood.
+5. **Applying the Theme** – `vim.cmd[[colorscheme Dayfox]]` sets the color scheme. You can easily switch to other options like nightfox, dawnfox, or nordfox depending on your mood.
 
-6. **Status Line Setup** – *require("lualine").setup()* initializes a clean, customizable bottom bar that displays useful file info, mode, and more.
+6. **Status Line Setup** – `require("lualine").setup()` initializes a clean, customizable bottom bar that displays useful file info, mode, and more.
 
 This example gives you a fully functional, modern Neovim setup that’s easy to expand with more plugins or customizations as you get more comfortable.
 
@@ -324,7 +324,7 @@ This example gives you a fully functional, modern Neovim setup that’s easy to 
 
 Practice the basics every day, learn by tweaking your config, explore plugins that improve workflow, stay curious about the community and be patient, mastering Neovim is a rewarding journey.
 
-If you’re new or want a refresher, running the command *:Tutor* inside Neovim is a great way to practice basic motions, commands, and workflows interactively. It’s like having a built-in guide to get comfortable with Vim’s editing philosophy before diving deeper.
+If you’re new or want a refresher, running the command `:Tutor` inside Neovim is a great way to practice basic motions, commands, and workflows interactively. It’s like having a built-in guide to get comfortable with Vim’s editing philosophy before diving deeper.
 
 ## Wrapping Up
 
