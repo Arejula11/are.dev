@@ -274,7 +274,7 @@ Even simple exercises like calculating averages, plotting trends, or grouping da
 
 Data science may seem intimidating at first, but with Python, Jupyter notebooks, and a few essential libraries, you can quickly start exploring and analyzing your own datasets. The key is to practice, experiment, and gradually build your skills.
 
-To help you get started, I’ve prepared a practical example notebook that walks through the same steps covered in this guide — from loading data to creating visualizations. You can explore it here:
+To help you get started, I’ve prepared a practical example notebook that walks through the same steps covered in this guide, from loading data to creating visualizations. You can explore it here:
  [Data Science Starter Notebook on GitHub](https://github.com/Arejula11/are.dev/blob/main/public/assets/data-science-starter-guide.ipynb)
 
 Happy coding!
