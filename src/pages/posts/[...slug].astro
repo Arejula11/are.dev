@@ -82,7 +82,7 @@ const { Content } = await entry.render();
                   <p>{entry.data.author}</p>
                 </a>
               )}
-              <p class="-mx-2">- {new Date(entry.data.publishedDate).toLocaleDateString()}</p>
+              <p class="-mx-2">- {new Date(entry.data.publishedDate).toLocaleDateString('en-GB')}</p>
             </div>
             <ol class="flex gap-3">
               {entry.data.tags.map((tag) => (
