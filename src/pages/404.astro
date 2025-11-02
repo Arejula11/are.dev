@@ -1,0 +1,80 @@
+---
+import ErrorLayout from "@layouts/ErrorLayout.astro";
+
+// File: src/pages/404.astro
+// Simple 404 page for Astro + Tailwind
+---
+
+<ErrorLayout>
+    <main class="min-h-screen flex items-center justify-center px-6 py-16">
+      <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <!-- Left: Illustration -->
+        <div class="flex items-center justify-center">
+          <div
+            class="w-full max-w-md p-6 rounded-2xl bg-gradient-to-br from-white to-[#fff7ea] border border-[#ffb84d33] shadow-md"
+            role="img"
+            aria-label="404 illustration"
+          >
+            <!-- Simple illustrative SVG (customizable) -->
+            <svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+              <defs>
+                <linearGradient id="g1" x1="0" x2="1">
+                  <stop offset="0" stop-color="#fffaf6" />
+                  <stop offset="1" stop-color="#fff3e6" />
+                </linearGradient>
+              </defs>
+
+              <rect x="0" y="0" width="500" height="350" fill="url(#g1)" rx="24" />
+
+              <!-- Big "404" -->
+              <text x="50%" y="48%" dominant-baseline="middle" text-anchor="middle"
+                    font-family="Inter, Roboto, system-ui, -apple-system, 'Segoe UI', Roboto"
+                    font-weight="700" font-size="90" fill="#ffa500" opacity="0.95">404</text>
+
+              <!-- Small message bubble -->
+              <g transform="translate(60,220)">
+                <rect x="0" y="0" rx="12" ry="12" width="380" height="80" fill="#ffffff" stroke="#ffd4a8" />
+                <text x="20" y="38" font-size="16" fill="#2c2c2c" font-family="Inter, Roboto">We couldn't find the page you were looking for.</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Right: Content -->
+        <div class="flex flex-col justify-center gap-6">
+          <div>
+            <p class="text-sm uppercase tracking-wider text-zinc-500">Page not found</p>
+            <h1 class="mt-3 text-4xl sm:text-5xl font-extrabold text-black">Sorry, that page doesn't exist.</h1>
+            <p class="mt-4 text-lg text-zinc-600 max-w-lg">
+              The link you followed may be broken or the page may have been removed. Try going back home
+              or use the search.
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <a
+              href="/"
+              class="inline-flex items-center gap-3 px-5 py-3 rounded-lg bg-orange-500 text-white font-medium shadow hover:bg-orange-600 transition"
+            >
+              <!-- Home icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path d="M10.707 1.5a1 1 0 00-1.414 0L2 8.793V17a1 1 0 001 1h5a1 1 0 001-1v-4h2v4a1 1 0 001 1h5a1 1 0 001-1V8.793L10.707 1.5z" />
+              </svg>
+              Go back home
+            </a>
+          </div>
+
+          <p class="text-sm text-zinc-500 mt-2">If you think this is an error, <a href="https://github.com/Arejula11/are.dev/issues" class="text-orange-600 hover:underline">let me know</a> by posting an issue.</p>
+
+          <div class="mt-4">
+            <p class="text-xs text-zinc-400">Quick links</p>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <a href="/tags/Learn" class="text-sm px-3 py-1 rounded bg-[#fff8f0] border border-[#ffd9b3] text-orange-600 hover:bg-[#fff0e0]">Learn</a>
+              <a href="/tags/Setup" class="text-sm px-3 py-1 rounded bg-[#fff8f0] border border-[#ffd9b3] text-orange-600 hover:bg-[#fff0e0]">Setup</a>
+              <a href="/tags/Portfolio" class="text-sm px-3 py-1 rounded bg-[#fff8f0] border border-[#ffd9b3] text-orange-600 hover:bg-[#fff0e0]">Portfolio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+</BasicLayout>
