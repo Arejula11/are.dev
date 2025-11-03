@@ -46,7 +46,7 @@ const posts = filterPosts.slice(0, 2);
 // Render content for the current post
 const { Content } = await entry.render();
 
-
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <head>
@@ -62,6 +62,7 @@ const { Content } = await entry.render();
   <meta name="twitter:title" content={entry.data.title}>
   <meta name="twitter:description" content={entry.data.description}>
   <meta name="twitter:image" content={`https://are-dev.es${entry.data.coverImage}`}>
+  <link rel="canonical" href={canonical} />
 </head>
 
 <PostsLayout data={ entry.data }>
