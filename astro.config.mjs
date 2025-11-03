@@ -17,4 +17,5 @@ export default defineConfig({
   },
 
   integrations: [sitemap()],
+  trailingSlash: 'always',
 })
