@@ -1,0 +1,3 @@
+*.ipynb linguist-generated=true
+*.astro linguist-language=Astro
+*.md linguist-language=Markdown
