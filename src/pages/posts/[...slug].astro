@@ -132,7 +132,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
               tags={post.data.tags}
               author={post.data.author}
               authorImage={post.data.authorImage}
-              url={'/posts/' + post.slug}
+              url={'/posts/' + post.slug + '/'}
             />
           ))}
         </section>

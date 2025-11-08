@@ -50,7 +50,7 @@ const { posts } = Astro.props;
           tags={post.data.tags}
           author={post.data.author}
           authorImage={post.data.authorImage}
-          url={"/posts/" + post.slug}
+          url={"/posts/" + post.slug + "/"}
         />
       ))}
     </section>
