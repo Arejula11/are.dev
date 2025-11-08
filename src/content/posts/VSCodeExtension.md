@@ -16,7 +16,7 @@ keywords: ["vscode", "extension", "typescript", "csv", "development", "tutorial"
 
 A few days ago I decided to create my first Visual Studio Code extension. The idea came from a simple need: every time I opened a CSV file, it was hard to read. Rows were messy, and columns didn’t line up. Even small datasets became frustrating to inspect. I wanted a quick way to visualize CSV files as clean tables directly inside the editor, without switching to Excel or using another tool.
 
-That idea became CSV Table Viewer, a VS Code extension that lets you preview CSV files in a formatted table with just one click. Building my first Visual Studio Code extension, CSV Table Viewer, was an exciting journey that combined my passion for coding with the desire to create useful tools for developers. In this post, I’ll share how I turned an idea into a functional extension and published it on the VS Code Marketplace.
+That idea became CSV Table Viewer, a VS Code extension that lets you preview CSV files in a formatted table with just one click. Building my first Visual Studio Code extension, CSV Table Viewer, was an exciting journey that combined my passion for coding with the desire to create useful tools for developers. In this post, I’ll share how I turned an idea into a functional extension and published it on the VS Code Marketplace. If you want to take a look at my extension, you can find it [here](https://marketplace.visualstudio.com/items?itemName=arejula11.csv-table-viewer). I hope this inspires you to build your own extensions too!
 
 ![CSV Table Viewer in Marketplace](/assets/VSCodeExtension.png)
 
