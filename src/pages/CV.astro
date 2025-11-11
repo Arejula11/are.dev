@@ -1,0 +1,428 @@
+---
+import Mail from "@icons/Mail.astro";
+import Download from "@icons/Download.astro";
+import BasicLayout from "@layouts/BasicLayout.astro";
+import Github from "@icons/Github.astro";
+import Linkedin from "@icons/Linkedin.astro";
+---
+
+<BasicLayout>
+  <article
+    class="bg-white rounded-3xl shadow-2xl border border-zinc-200 w-full max-w-5xl mx-auto my-12 overflow-hidden transition-all"
+  >
+    <!-- Header -->
+    <header
+      class="p-10 border-b border-zinc-200 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0"
+    >
+      <div class="text-center md:text-left">
+        <h1 class="text-4xl font-bold mb-2 text-zinc-800">Miguel Aréjula Aísa</h1>
+        <p class="text-zinc-600 text-lg mb-4">
+          Software Engineer & MSc Student in Software Engineering
+        </p>
+        <div class="flex justify-center md:justify-start gap-4 text-zinc-600">
+          <a
+            href="mailto:arejula10@gmail.com"
+            class="hover:text-orange-500 transition-colors"
+            title="Email"
+            aria-label="Email"
+          >
+            <Mail />
+          </a>
+          <a
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/miguel-arejula-aisa-653088291"
+            target="_blank"
+            class="hover:text-orange-500 transition-colors"
+            title="LinkedIn"
+          >
+            <Linkedin />
+          </a>
+          <a
+            rel="noopener noreferrer"
+            href="https://github.com/Arejula11"
+            target="_blank"
+            class="hover:text-orange-500 transition-colors"
+            title="GitHub"
+          >
+            <Github />
+          </a>
+          <a
+            href="/Miguel_Arejula_Aisa_CV.pdf"
+            download="MiguelArejulaCV.pdf"
+            class="hover:text-orange-500 transition-colors"
+            title="Download CV"
+          >
+            <Download />
+          </a>
+        </div>
+      </div>
+
+      <img
+        src="https://avatars.githubusercontent.com/u/92888725?v=4"
+        alt="Miguel Aréjula Aísa"
+        class="w-32 h-32 rounded-full border border-zinc-300 shadow-md"
+      />
+    </header>
+
+    <!-- Content -->
+    <section class="p-10 space-y-12 text-zinc-800 leading-relaxed">
+      <!-- Experience -->
+      <div>
+        <h2 class="text-2xl font-semibold border-b border-zinc-200 pb-2 mb-6">
+          Experience
+        </h2>
+        <div class="transition-all p-4 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-1 ">
+          <h3 class="text-xl font-bold text-zinc-700">
+            Software Engineer — University of Zaragoza
+          </h3>
+          <p class="text-zinc-600 text-sm mb-2">
+            Research Project TED2021-130449B-I00
+          </p>
+          <ul class="list-disc list-inside space-y-1 text-zinc-700">
+            <li>
+              Led development of a custom web application for the Traumatology Department (Hospital Clínico Lozano Blesa), from requirements gathering to delivery.
+            </li>
+            <li>
+              Built a full-stack system using React, Express, FastAPI, and PostgreSQL; streamlined operations for ~50 patients/day.
+            </li>
+            <li>
+              Designed and processed structured clinical data into relational models to enable formal clinical pathway validation.
+            </li>
+          </ul>
+          <a
+              href="https://are-dev.es/posts/tfg/"
+              target="_blank"
+              class="inline-block text-orange-500 hover:underline text-sm font-medium mt-2"
+            >
+              Read More
+            </a>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div>
+        <h2 class="text-2xl font-semibold border-b border-zinc-200 pb-2 mb-6">
+          Education
+        </h2>
+        <div class="space-y-6">
+          <div class="shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all p-4 rounded-xl">
+            <h3 class="text-lg font-semibold text-zinc-700">
+              Master in Software Engineering — University of Southern Denmark
+            </h3>
+            <time datetime="2025-09">Sept 2025</time> – <time datetime="2027-06">June 2027</time>
+            <p class="text-zinc-700 text-sm">
+              Coursework: Advanced Software Engineering Methodologies, Advanced Software Architecture and Analysis Techniques, Big Data and Data Science Technology.
+            </p>
+          </div>
+          <div class="shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all p-4 rounded-xl">
+            <h3 class="text-lg font-semibold text-zinc-700">
+              Bachelor in Software Engineering — University of Zaragoza
+            </h3>
+            <time datetime="2021-09">Sept 2021</time> – <time datetime="2025-06">June 2025</time>
+            <p class="text-zinc-700 text-sm mb-1">
+              Coursework: Software Engineering, Distributed Systems, Concurrent and Distributed Programming, Software Architecture, Requirements Engineering, Verification & Validation, Agile Methodologies, Software Quality, Software Engineering Laboratory.
+            </p>
+            <p class="text-zinc-700 text-sm">
+              Achieved high honors in Information Systems II and Verification & Validation.
+            </p>
+          </div>
+          <div class="shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all p-4 rounded-xl">
+            <h3 class="text-lg font-semibold text-zinc-700">
+              Cambridge English Advanced (C1)
+            </h3>
+            <time datetime="2024-07">July 2024</time>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div>
+        <h2 class="text-2xl font-semibold border-b border-zinc-200 pb-2 mb-6">
+          Projects
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- CSV Table Viewer (VSCode Extension) -->
+          <div class="p-6 border border-zinc-200 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all" itemtype="https://schema.org/Project">
+            <h3 class="text-xl font-bold text-zinc-700 mb-2 flex justify-between items-center">
+              CSV Table Viewer 
+              <a
+                href="https://github.com/Arejula11/csv-table-viewer"
+                target="_blank"
+                class="text-orange-500 hover:underline text-sm"
+                >GitHub →</a
+              >
+            </h3>
+            <h4 class="text-md font-semibold text-zinc-500 mb-2">VSCode Extension</h4>
+            <ul class="list-disc list-inside space-y-1 text-zinc-700 mb-3">
+              <li>
+                Visual Studio Code extension that allows users to easily visualize CSV files as interactive tables.
+              </li>
+              <li>
+                Implements custom commands, automatic column detection, and persistent view configuration.
+              </li>
+              <li>
+                Published on the VSCode Marketplace, reaching developers who need quick CSV visualization tools.
+              </li>
+              <li>
+                <strong>Tools:</strong> TypeScript, VSCode API, Node.js, npm, WebView.
+              </li>
+            </ul>
+            <div class="flex gap-4">
+              <a
+                href="https://marketplace.visualstudio.com/items?itemName=Arejula11.csv-table-viewer"
+                target="_blank"
+                class="inline-block text-orange-500 hover:underline text-sm font-medium"
+                >View on Marketplace</a
+              >
+              <a
+                href="https://are-dev.es/posts/vscodeextension/"
+                target="_blank"
+                class="inline-block text-orange-500 hover:underline text-sm font-medium"
+                >Read More</a
+              >
+            </div>
+          </div>
+          <!-- AgroNet -->
+          <div class="p-6 border border-zinc-200 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all" itemtype="https://schema.org/Project">
+            <h3 class="text-xl font-bold text-zinc-700 mb-2 flex justify-between items-center">
+              AgroNet
+              <a
+                href="https://github.com/STW-24-25"
+                target="_blank"
+                class="text-orange-500 hover:underline text-sm"
+                >GitHub →</a
+              >
+            </h3>
+            <ul class="list-disc list-inside space-y-1 text-zinc-700 mb-3">
+              <li>
+                Web platform designed to connect local farmers, distributors, and consumers to promote sustainable agriculture.
+              </li>
+              <li>
+                Developed a responsive and accessible interface, focusing on product traceability and ease of use.
+              </li>
+              <li>
+                Integrated backend services for data management, authentication, and marketplace interactions.
+              </li>
+              <li>
+                <strong>Tools:</strong> Astro, TailwindCSS, Node.js, Express, PostgreSQL, Vercel.
+              </li>
+            </ul>
+            <a
+              href="https://are-dev.es/posts/agronet/"
+              target="_blank"
+              class="inline-block text-orange-500 hover:underline text-sm font-medium"
+              >Read More</a
+            >
+          </div>
+
+          
+
+          <!-- PlayBeat -->
+          <div class="p-6 border border-zinc-200 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all" itemtype="https://schema.org/Project">
+            <h3 class="text-xl font-bold text-zinc-700 mb-2 flex justify-between items-center">
+              PlayBeat
+              <a
+                href="https://github.com/UNIZAR-30226-2024-03"
+                target="_blank"
+                class="text-orange-500 hover:underline text-sm"
+                >GitHub →</a
+              >
+            </h3>
+            <ul class="list-disc list-inside space-y-1 text-zinc-700 mb-3">
+              <li>
+                Streaming platform for music and podcasts with synchronized playback across devices.
+              </li>
+              <li>
+                Led the front-end team and deployed the web app on Vercel, integrating with a backend on Azure.
+              </li>
+              <li>
+                Managed synchronization logic and data flow between mobile and web clients.
+              </li>
+              <li>
+                <strong>Tools:</strong> Astro, Vercel, Node.js, Express, PostgreSQL, React Native, Azure.
+              </li>
+            </ul>
+            <a
+              href="https://are-dev.es/posts/playbeat/"
+              target="_blank"
+              class="inline-block text-orange-500 hover:underline text-sm font-medium"
+            >
+              Read More
+            </a>
+          </div>
+
+
+          <!-- Message Broker -->
+          <div class="p-6 border border-zinc-200 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all" itemtype="https://schema.org/Project">
+            <h3 class="text-xl font-bold text-zinc-700 mb-2 flex justify-between items-center">
+              Message Broker
+              <a href="https://github.com/Practicass/brokerMensajes" target="_blank" class="text-orange-500 hover:underline text-sm" rel="noopener noreferrer">GitHub →</a>
+            </h3>
+            <ul class="list-disc list-inside space-y-1 text-zinc-700">
+              <li>
+                Lightweight Go-based message broker supporting P2P, Pub/Sub, and request-reply patterns.
+              </li>
+              <li>
+                Robust error handling and retry mechanisms for distributed systems.
+              </li>
+              <li><strong>Tools:</strong> Go.</li>
+            </ul>
+          </div>
+
+          <!-- Are-Dev -->
+          <div class="p-6 border border-zinc-200 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all" itemtype="https://schema.org/Project">
+            <h3 class="text-xl font-bold text-zinc-700 mb-2 flex justify-between items-center">
+              Are-Dev
+              <a href="https://github.com/Arejula11/are.dev" target="_blank" class="text-orange-500 hover:underline text-sm" rel="noopener noreferrer">GitHub →</a>
+            </h3>
+            <ul class="list-disc list-inside space-y-1 text-zinc-700">
+              <li>
+                Personal technical blog and YouTube channel on software engineering and modern web frameworks.
+              </li>
+              <li>
+                Publishes tutorials, project walkthroughs, and technical insights.
+              </li>
+              <li><strong>Tools:</strong> Astro, Vercel, Markdown.</li>
+            </ul>
+          </div>
+
+          <!-- Energy Price Prediction -->
+          <div class="p-6 border border-zinc-200 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all" itemtype="https://schema.org/Project">
+            <h3 class="text-xl font-bold text-zinc-700 mb-2">
+              Energy Price Prediction
+              <a href="https://github.com/The-European-Avengers/BigDataProject" target="_blank" class="text-orange-500 hover:underline text-sm" rel="noopener noreferrer">GitHub →</a>
+            </h3>
+            <h4 class="text-md font-semibold text-zinc-500 mb-2">Big Data Project</h4>
+            <ul class="list-disc list-inside space-y-1 text-zinc-700">
+              <li>
+                Analysis of DMI weather and national energy datasets to forecast electricity prices.
+              </li>
+              <li>
+                Aims to uncover renewable energy impacts, peak pricing, and seasonal trends.
+              </li>
+              <li>
+                Employs big data pipelines and ML models for predictive analytics.
+              </li>
+              <li>
+                <strong>Tools:</strong> Kafka, HDFS, Kubernetes, Spark, Python.
+              </li>
+            </ul>
+          </div>
+
+          <!-- PawPals -->
+          <div class="p-6 border border-zinc-200 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all" itemtype="https://schema.org/Project">
+            <h3 class="text-xl font-bold text-zinc-700 mb-2 flex justify-between items-center">
+              PawPals
+              <a href="https://github.com/Arejula11/PawPals" target="_blank" class="text-orange-500 hover:underline text-sm" rel="noopener noreferrer">GitHub →</a>
+            </h3>
+            <ul class="list-disc list-inside space-y-1 text-zinc-700">
+              <li>
+                Full-stack social network for pet owners with Laravel and PostgreSQL.
+              </li>
+              <li>
+                Containerized with Docker for deployment; implemented guest and role-based access.
+              </li>
+              <li>
+                Led the development team, managing delivery and quality.
+              </li>
+              <li><strong>Tools:</strong> Laravel, Docker.</li>
+            </ul>
+          </div>
+
+          <!-- ByronHub -->
+          <div class="p-6 border border-zinc-200 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all" itemtype="https://schema.org/Project">
+            <h3 class="text-xl font-bold text-zinc-700 mb-2 flex justify-between items-center">
+              ByronHUB
+              <a href="https://github.com/UNIZAR-30249-2025-PMPJ" target="_blank" class="text-orange-500 hover:underline text-sm" rel="noopener noreferrer">GitHub →</a>
+            </h3>
+            <ul class="list-disc list-inside space-y-1 text-zinc-700">
+              <li>
+                Space booking system for the Ada Byron building using DDD and hexagonal architecture.
+              </li>
+              <li>
+                Containerized with Docker Compose and deployed on AWS & Railway via GitHub Actions.
+              </li>
+              <li>
+                >80% automated test coverage with Jest, Postman, and CI/CD pipelines.
+              </li>
+              <li>
+                <strong>Tools:</strong> Node.js, TypeScript, React, PostgreSQL, RabbitMQ, Docker, AWS, Railway, Jest, GitHub Actions.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bento Grid Stack -->
+      <!-- Tech Stack -->
+<div>
+  <h2 class="text-2xl font-semibold border-b border-zinc-200 pb-2 mb-8">
+    Tech Stack
+  </h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <!-- Programming -->
+    <div class="p-6 bg-white border border-zinc-200 rounded-2xl hover:shadow-md hover:-translate-y-1 transition-all">
+      <h4 class="font-semibold text-zinc-800 mb-3">Programming</h4>
+      <div class="flex flex-wrap gap-2">
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="C programming language">C</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="C++ programming language">C++</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Java programming language">Java</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Python programming language">Python</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="JavaScript programming language">JavaScript</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="TypeScript programming language">TypeScript</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500">Go</span>
+      </div>
+    </div>
+
+    <!-- Databases -->
+    <div class="p-6 bg-white border border-zinc-200 rounded-2xl hover:shadow-md hover:-translate-y-1 transition-all">
+      <h4 class="font-semibold text-zinc-800 mb-3">Databases</h4>
+      <div class="flex flex-wrap gap-2">
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="PostgreSQL database">PostgreSQL</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="MongoDB database">MongoDB</span>
+      </div>
+    </div>
+
+    <!-- Web -->
+    <div class="p-6 bg-white border border-zinc-200 rounded-2xl hover:shadow-md hover:-translate-y-1 transition-all">
+      <h4 class="font-semibold text-zinc-800 mb-3">Web</h4>
+      <div class="flex flex-wrap gap-2">
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="HTML markup language">HTML</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="CSS stylesheet language">CSS</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="TailwindCSS framework">TailwindCSS</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="React JavaScript library">React</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Node.js JavaScript runtime">Node.js</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Express web framework">Express</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Astro framework">Astro</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="FastAPI framework">FastAPI</span>
+      </div>
+    </div>
+
+    <!-- DevOps & Tools -->
+    <div class="p-6 bg-white border border-zinc-200 rounded-2xl hover:shadow-md hover:-translate-y-1 transition-all">
+      <h4 class="font-semibold text-zinc-800 mb-3">DevOps & Tools</h4>
+      <div class="flex flex-wrap gap-2">
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Docker containerization platform">Docker</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="GitHub Actions CI/CD">GitHub Actions</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Git version control">Git</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="VS Code editor">VS Code</span>
+      </div>
+    </div>
+
+    <!-- Deployment -->
+    <div class="p-6 bg-white border border-zinc-200 rounded-2xl hover:shadow-md hover:-translate-y-1 transition-all">
+      <h4 class="font-semibold text-zinc-800 mb-3">Deployment</h4>
+      <div class="flex flex-wrap gap-2">
+        <span class=" text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="AWS cloud platform">AWS</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Vercel platform">Vercel</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Render platform">Render</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Railway platform">Railway</span>
+        <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Azure cloud platform">Azure</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </section>
+  </article>
+</BasicLayout>
