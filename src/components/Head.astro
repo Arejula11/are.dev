@@ -5,6 +5,7 @@ import { SEO } from "astro-seo";
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
+<!-- SVG favicon for modern browsers -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
 <meta name="robots" content="index, follow" />
@@ -18,6 +19,11 @@ import { SEO } from "astro-seo";
 <link rel="mask-icon" href="/favicon.svg" color="#000000">
 <link rel="canonical" href="https://are-dev.es" />
 <link rel="sitemap" href="/sitemap-index.xml" />
+<!-- Apple touch icon for iOS home screen / bookmarks -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<!-- PNG fallback for Safari & older browsers -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
 
 
