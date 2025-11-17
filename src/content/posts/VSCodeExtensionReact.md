@@ -7,7 +7,7 @@ coverImage: "/assets/vscodeReact.webp"
 author: "Miguel Aréjula Aísa"
 authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
 authorUrl: "https://github.com/Arejula11"
-draft: true
+draft: false
 language: "en"
 keywords: ["vscode", "extension", "typescript", "csv", "development", "tutorial", "visual studio code", "react", "vscodeextension", "tailwindcss", "webview", "frontend", "softwareengineering", "vite", "javascript", "webdev", "opensource", "coding", "programming", "devtools"]
 ---
@@ -100,9 +100,8 @@ npm install react react-dom
 
 # Install development dependencies for Vite, Tailwind, and TypeScript
 npm install -D vite @vitejs/plugin-react typescript \
-  tailwindcss postcss autoprefixer \
-  @types/react @types/react-dom \
-  @vscode/test-electron # For testing
+  tailwindcss postcss autoprefixer @tailwindcss/postcss \
+  @types/react @types/react-dom
 ```
 
 **What each package does:**
@@ -122,33 +121,20 @@ After installing, your project is ready to configure Tailwind and Vite for a mod
 
 With all dependencies installed, the next step is to configure TailwindCSS, PostCSS, and Vite so the webview can be built cleanly and bundled into your VS Code extension.
 
-### 3.1 Initialise TailwindCSS
 
-Create the Tailwind and PostCSS config files. First, create a new folder named `webview` for your frontend code:
-
-This generates:
-  * `postcss.config.js`
-
-Now configure the Tailwind config to scan your React files in the new `webview` folder:
+Create the PostCSS config files named `postcss.config.cjs` in the root of your project:
 
 ```javascript
-// tailwind.config.js
-module.exports = {
-  content: [
-    "./webview/**/*.{ts,tsx,js,jsx,html}",
-  ],
-  theme: {
-    extend: {},
+// postcss.config.cjs
+export default {
+  plugins: {
+    "@tailwindcss/postcss": {},
   },
-  plugins: [],
 };
 ```
+This tells PostCSS to use Tailwind’s PostCSS plugin during the build.
 
-This ensures Tailwind only includes the classes actually used in your webview, which keeps the final bundle lightweight.
-
-### 3.2 Create the Webview Entry Styles
-
-Inside your `webview` folder, create an `index.css` file:
+Then crate a folder inside `src` named `webview`. Then, create an `index.css` file:
 
 ```css
 /* webview/index.css */
@@ -157,7 +143,7 @@ Inside your `webview` folder, create an `index.css` file:
 
 This imports Tailwind’s layers and lets you use the utility classes directly in your JSX.
 
-### 3.3 Configure Vite
+### Configure Vite
 
 Next, set up Vite so it can build your webview into a production-ready bundle inside the extension.
 
@@ -184,14 +170,6 @@ export default defineConfig({
 });
 
 ```
-
-**Key things happening here:**
-
-  * `root: "./webview"` tells Vite the source code for the webview lives in that folder.
-  * `outDir: "dist"` sends the output where your extension can load it.
-  * `base: "./"` is crucial for VS Code webviews; it ensures asset paths (like CSS/JS) are resolved correctly relative to the webview's base URI.
-  * `sourcemap: true` makes debugging much easier.
-
 
 ## 4\. Create the React Webview Frontend
 
@@ -221,7 +199,7 @@ if (rootElement) {
 
 This is the exact entry Vite uses when bundling the webview.
 
-### `webview/App.tsx` (Test Component)
+### `webview/App.tsx` (Main Component)
 
 Create a simple component to confirm React, Tailwind, and the build are configured correctly.
 
@@ -291,9 +269,9 @@ Create or update your `tsconfig.json` in the root with the following configurati
 
 
 
-## 6\. Implementing the Extension Backend
+## 6\. Implementing the Extension
 
-Now we write the backend code in `src/extension.ts` that registers the command, creates the webview panel, and most importantly, securely loads the assets from the Vite build.
+Now we write the code in `src/extension.ts` that registers the command, creates the webview panel and most importantly, securely loads the assets from the Vite build.
 
 ### The extension.ts Logic
 
@@ -301,159 +279,54 @@ This logic creates the HTML template and injects the bundled JavaScript and CSS 
 
 ```typescript
 // src/extension.ts
-import * as vscode from 'vscode';
-import * as path from 'path';
-import * as fs from 'fs';
+import * as vscode from "vscode";
+import * as path from "path";
 
 export function activate(context: vscode.ExtensionContext) {
-
-  let disposable = vscode.commands.registerCommand('react-tailwind-extension.start', () => {
-    const panel = vscode.window.createWebviewPanel(
-      'reactTailwindWebview', // Identifies the type of the webview
-      'React + Tailwind Viewer', // Title of the panel
-      vscode.ViewColumn.One, // Show in the first column
-      {
-        enableScripts: true, // Allow scripts in the webview
-        localResourceRoots: [vscode.Uri.file(path.join(context.extensionPath, 'dist'))],
-      }
-    );
-
-    // Get the path to the bundled files
-    const distPath = path.join(context.extensionPath, 'dist');
-    const scriptPath = vscode.Uri.file(path.join(distPath, 'index.js'));
-    const stylePath = vscode.Uri.file(path.join(distPath, 'index.css'));
-
-    // Get URIs to load the files in the webview
-    const scriptUri = panel.webview.asWebviewUri(scriptPath);
-    const styleUri = panel.webview.asWebviewUri(stylePath);
-
-    // CRUCIAL: Get the file with the hashed CSS name for production builds
-    // In production, Vite may hash the CSS file (e.g., index-er7K2eTl.css)
-    const assetsFolder = path.join(distPath, 'assets');
-    const cssFileName = fs.readdirSync(assetsFolder).find(file => file.endsWith('.css'));
-    let styleAssetUri: vscode.Uri | undefined;
-    
-    if (cssFileName) {
-        styleAssetUri = panel.webview.asWebviewUri(vscode.Uri.file(path.join(assetsFolder, cssFileName)));
-    }
-
-
-    // Set the HTML content
-    panel.webview.html = getWebviewContent(
-        panel.webview,
-        context.extensionUri,
-        scriptUri.toString(),
-        styleAssetUri ? styleAssetUri.toString() : ''
-    );
-    
-    // Webview Message Listener (Backend -> Frontend)
-    panel.webview.onDidReceiveMessage(message => {
-        if (message.command === 'alert') {
-            vscode.window.showInformationMessage(message.text);
+  context.subscriptions.push(
+    vscode.commands.registerCommand("react-tailwind-extension.start", () => {
+      const panel = vscode.window.createWebviewPanel(
+        "reactWebview",
+        "React + Tailwind",
+        vscode.ViewColumn.One,
+        {
+          enableScripts: true,
+          localResourceRoots: [
+            vscode.Uri.file(path.join(context.extensionPath, "dist")),
+          ],
         }
-    },
-    undefined,
-    context.subscriptions
-    );
-  });
+      );
 
-  context.subscriptions.push(disposable);
-}
+      const stylePath = path.join(
+        context.extensionPath,
+        "dist/assets/index-er7K2eTl.css"
+      );
+      const styleUri = panel.webview.asWebviewUri(vscode.Uri.file(stylePath));
 
-// Function to generate the complete HTML structure
-function getWebviewContent(webview: vscode.Webview, extensionUri: vscode.Uri, scriptUri: string, styleUri: string) {
-  // Use a CSP to restrict which resources can be loaded
-  const nonce = getNonce(); 
+      const bundlePath = path.join(context.extensionPath, "dist", "bundle.js");
+      const bundleUri = panel.webview.asWebviewUri(vscode.Uri.file(bundlePath));
 
-  return `<!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource} 'unsafe-inline'; script-src 'nonce-${nonce}';">
-      <title>React + Tailwind Webview</title>
-      ${styleUri ? `<link href="${styleUri}" rel="stylesheet" />` : ''}
-  </head>
-  <body>
-      <div id="root"></div>
-      <script nonce="${nonce}" src="${scriptUri}"></script>
-  </body>
-  </html>`;
-}
-
-function getNonce() {
-  let text = '';
-  const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  for (let i = 0; i < 32; i++) {
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
-  }
-  return text;
-}
-```
-
-> Security Note: You must use `panel.webview.asWebviewUri()` and a Content Security Policy (CSP). The `nonce` is critical for security, ensuring only your bundled script can execute.
-
-
-
-## 7\. Connecting Frontend and Backend (Messaging)
-
-The webview (frontend) and the extension (backend) run in completely separate processes. You need a communication bridge to pass data and commands.
-
-### 7.1 Frontend: Sending Messages
-
-In your React component, you can get a reference to the VS Code API and send a message.
-
-```typescript
-// webview/App.tsx (partial)
-import React from 'react';
-
-// Get the VS Code API bridge
-const vscode = acquireVsCodeApi(); 
-
-export default function App() {
-  const handleClick = () => {
-    // Send a message to the VS Code extension backend
-    vscode.postMessage({
-      command: 'alert',
-      text: 'Button clicked from React!',
-    });
-  };
-
-  return (
-    // ... UI structure ...
-    <button 
-        onClick={handleClick} 
-        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
-    >
-      Click Me & Send Message
-    </button>
+      panel.webview.html = `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>React + Tailwind</title>
+          <link href="${styleUri}" rel="stylesheet">
+        </head>
+        <body>
+          <div id="root"></div>
+          <script type="module" src="${bundleUri}"></script>
+        </body>
+        </html>
+      `;
+    })
   );
 }
 ```
 
-### 7.2 Backend: Receiving Messages
-
-We already included the receiver logic in `extension.ts` (Section 6):
-
-```typescript
-// src/extension.ts (partial)
-
-// Webview Message Listener (Backend -> Frontend)
-panel.webview.onDidReceiveMessage(message => {
-    if (message.command === 'alert') {
-        // This is where you would call a VS Code API, read a file, etc.
-        vscode.window.showInformationMessage(message.text);
-    }
-},
-// ...
-);
-```
-
-This bridge is the core of any interactive extension, allowing your rich React UI to trigger powerful VS Code features.
-
-
-
-## 8\. package.json Setup
+## 7\. package.json Setup
 
 This is where everything comes together. You need a command users can trigger and scripts to build both the backend and the webview.
 
@@ -499,7 +372,7 @@ Add the following sections to your `package.json`:
   * `vscode:prepublish` ensures both parts are built before you package your extension.
 
 
-## 9\. Build & Run Checklist
+## 8\. Build & Run Checklist
 
 Before launching the extension, it helps to follow a short routine. Since VS Code webviews load assets strictly, missing a single path or hash usually leads to a blank panel.
 
@@ -511,32 +384,42 @@ Before launching the extension, it helps to follow a short routine. Since VS Cod
 4.  If nothing appears, open *Developer Tools* `Help > Toggle Developer Tools` and check the Console for CSP violations or 404 errors on asset paths.
 
 If everything is wired correctly, your React + Tailwind interface will render inside VS Code, ready for user interaction!
+![VS Code React Tailwind Webview](/assets/vscodeReactView.png)
 
-
-
-## 10\. Final Project Structure
+## 9\. Final Project Structure
 
 Once the project is fully set up and built, it should look something like this. This layout keeps the extension logic, webview code, compiled output, and build tools neatly separated.
 
 ```
 .
-├── dist/
-│   ├── assets/
-│   │   ├── index-er7K2eTl.css  <-- HASHED CSS FILE (CRUCIAL)
-│   │   └── index-Hh4s3d2w.js   <-- HASHED JS FILE (CRUCIAL)
-│   └── index.html              <-- vite artifact (ignored by us)
-├── out/
-│   └── extension.js            <-- Compiled backend
-├── src/
-│   └── extension.ts            <-- Extension backend logic
-├── webview/
-│   ├── App.tsx                 <-- React Components
-│   ├── index.css               <-- Tailwind entry styles
-│   └── main.tsx                <-- React entry point
+├── CHANGELOG.md
+├── dist
+│   ├── assets
+│   │   └── index-er7K2eTl.css
+│   └── bundle.js
+├── eslint.config.mjs
+├── out
+│   ├── extension.js
+│   ├── test
+│   │   └── extension.test.js
+│   └── webview
+│       ├── App.js
+│       └── index.js
+├── package-lock.json
 ├── package.json
+├── postcss.config.js
+├── README.md
+├── src
+│   ├── extension.ts
+│   ├── test
+│   │   └── extension.test.ts
+│   └── webview
+│       ├── App.tsx
+│       ├── index.css
+│       └── index.tsx
 ├── tsconfig.json
-├── vite.config.ts
-└── ...
+├── vite.config.js
+└── vsc-extension-quickstart.md
 ```
 
 This structure makes it easy to maintain the project long-term: `src/` is your development backend, `webview/` is your development frontend, and `dist/` and `out/` hold the final compiled extension files.
