@@ -175,7 +175,7 @@ export default defineConfig({
 
 Your React webview lives inside `webview/`, and Vite will compile it into the `dist/` folder for VS Code to load. This section sets up the entry point, the React root, and a basic component.
 
-### `webview/index.tsx` (Entry Point)
+### webview/index.tsx (Entry Point)
 
 This file initializes the React application and mounts it into the webview's DOM root.
 
@@ -199,7 +199,7 @@ if (rootElement) {
 
 This is the exact entry Vite uses when bundling the webview.
 
-### `webview/App.tsx` (Main Component)
+### webview/App.tsx (Main Component)
 
 Create a simple component to confirm React, Tailwind, and the build are configured correctly.
 
@@ -432,5 +432,6 @@ With this setup, you now have a complete workflow for building a VS Code extensi
 
 This structure isn’t just a starting point, it’s a flexible template you can reuse for future tools. Whether you're planning data viewers, dashboards, interactive editors, or anything else that benefits from a richer interface, the same approach applies.
 
-If you continue expanding this project, consider automating asset injection (like the CSS file name), sharing TypeScript types between the extension and the webview, or integrating a full state management solution like Redux or Zustand. There’s a lot more you can build once the fundamentals are in place. Happy coding\!
+Explore further; implementing React Context for state management or reusing React components across different extensions. Do not be afraid to experiment and keep improving your extension with new features and polish.
 
+Happy coding!
