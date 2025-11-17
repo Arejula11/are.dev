@@ -3,11 +3,11 @@ title: "Build a VS Code Extension with React & TailwindCSS: Step-by-Step"
 description: "Learn how to create a modern VS Code extension with a React + TailwindCSS webview. This guide walks you through initializing the extension, configuring Vite and Tailwind, integrating React for UI, and running your extension in VS Code, providing a fast, interactive, and fully typed TypeScript setup."
 tags: ["Learn"]
 publishedDate: "2025-11-16 19:00"
-coverImage: "/assets/vscodeReact.png"
+coverImage: "/assets/vscodeReact.webp"
 author: "Miguel Aréjula Aísa"
 authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
 authorUrl: "https://github.com/Arejula11"
-draft: false
+draft: true
 language: "en"
 keywords: ["vscode", "extension", "typescript", "csv", "development", "tutorial", "visual studio code", "react", "vscodeextension", "tailwindcss", "webview", "frontend", "softwareengineering", "vite", "javascript", "webdev", "opensource", "coding", "programming", "devtools"]
 ---
@@ -126,14 +126,7 @@ With all dependencies installed, the next step is to configure TailwindCSS, Post
 
 Create the Tailwind and PostCSS config files. First, create a new folder named `webview` for your frontend code:
 
-```bash
-mkdir webview
-npx tailwindcss init -p
-```
-
 This generates:
-
-  * `tailwind.config.js`
   * `postcss.config.js`
 
 Now configure the Tailwind config to scan your React files in the new `webview` folder:
@@ -159,9 +152,7 @@ Inside your `webview` folder, create an `index.css` file:
 
 ```css
 /* webview/index.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 ```
 
 This imports Tailwind’s layers and lets you use the utility classes directly in your JSX.
@@ -176,19 +167,22 @@ Create a `vite.config.ts` file in the root of your project:
 // vite.config.ts
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { resolve } from "path";
+import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  root: "./webview", // Source code for the webview lives here
-  base: "./",       // Crucial for resolving assets correctly in VS Code
   build: {
-    outDir: resolve(__dirname, "dist"), // Output to dist/
-    emptyOutDir: true,
-    sourcemap: true,
-    minify: true,
+    outDir: "dist",                         // output bundle for Webview
+    emptyOutDir: true,                      // clear dist before build
+    rollupOptions: {
+      input: path.resolve(__dirname, "src/webview/index.tsx"),
+      output: {
+        entryFileNames: "bundle.js",
+      },
+    },
   },
 });
+
 ```
 
 **Key things happening here:**
@@ -203,12 +197,12 @@ export default defineConfig({
 
 Your React webview lives inside `webview/`, and Vite will compile it into the `dist/` folder for VS Code to load. This section sets up the entry point, the React root, and a basic component.
 
-### `webview/main.tsx` (Entry Point)
+### `webview/index.tsx` (Entry Point)
 
 This file initializes the React application and mounts it into the webview's DOM root.
 
 ```tsx
-// webview/main.tsx
+// webview/index.tsx
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
@@ -236,22 +230,21 @@ Create a simple component to confirm React, Tailwind, and the build are configur
 import React from "react";
 
 export default function App() {
-  return (
-    <div className="p-6 bg-vscode-background min-h-screen">
-      <h1 className="text-2xl font-bold text-blue-500">
-        Hello from React + Tailwind in VS Code!
-      </h1>
-      <div className="mt-4 p-4 bg-gray-100 dark:bg-gray-800 rounded shadow">
-        <p className="text-gray-700 dark:text-gray-300">
-          This is a simple webview using React and styled with Tailwind CSS.
-          Note: Use the `dark:` prefix for dark mode styling in Tailwind!
-        </p>
-        <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
-          Click Me
-        </button>
-      </div>
-    </div>
-  );
+	return (
+		<div className="p-6 bg-gray min-h-screen">
+		<h1 className="text-2xl font-bold text-blue-600 bg-orange-500">
+			Hello from React + Tailwind in VS Code!
+		</h1>
+		<div className="mt-4 p-4 bg-[#50d71e] rounded shadow">
+			<p className="text-gray-700">
+			This is a simple webview using React and styled with Tailwind CSS.
+			</p>
+			<button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+				Click Me
+			</button>
+		</div>
+	</div>
+	);
 }
 ```
 
@@ -271,7 +264,7 @@ Create or update your `tsconfig.json` in the root with the following configurati
 {
   "compilerOptions": {
     "target": "ES2020",
-    "module": "NodeNext",
+    "module": "ESNext",
     "lib": ["ES2020", "DOM"],
     "outDir": "out",
     "rootDir": "src",
@@ -279,12 +272,13 @@ Create or update your `tsconfig.json` in the root with the following configurati
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react-jsx",
-    "moduleResolution": "NodeNext"
+    "jsx": "react-jsx",            
+    "moduleResolution": "Node"    
   },
-  "include": ["src", "webview"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "vite"]
 }
+
 ```
 
 ### Why these settings matter
