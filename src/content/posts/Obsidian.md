@@ -2,7 +2,7 @@
 title: "Why I Use Obsidian, My Personal Notes Workflow"
 description: "Why I trust Obsidian for every note. See my personal workflow and how the simplicity of Markdown and plain text files offers unmatched speed, longevity and flexibility compared to Notion."
 tags: ["Setup"]
-publishedDate: "2025-11-23 19:00"
+publishedDate: "2025-11-30 19:00"
 coverImage: "/assets/Obsidian.png"
 author: "Miguel Aréjula Aísa"
 authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
