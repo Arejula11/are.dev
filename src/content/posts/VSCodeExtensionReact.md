@@ -134,7 +134,7 @@ export default {
 ```
 This tells PostCSS to use Tailwind’s PostCSS plugin during the build.
 
-Then crate a folder inside `src` named `webview`. Then, create an `index.css` file:
+Then create a folder inside `src` named `webview`. Then, an `index.css` file:
 
 ```css
 /* webview/index.css */
