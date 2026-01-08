@@ -122,10 +122,10 @@ After installing, your project is ready to configure Tailwind and Vite for a mod
 With all dependencies installed, the next step is to configure TailwindCSS, PostCSS, and Vite so the webview can be built cleanly and bundled into your VS Code extension.
 
 
-Create the PostCSS config files named `postcss.config.cjs` in the root of your project:
+Create the PostCSS config files named `postcss.config.mjs` in the root of your project:
 
 ```javascript
-// postcss.config.cjs
+// postcss.config.mjs
 export default {
   plugins: {
     "@tailwindcss/postcss": {},
