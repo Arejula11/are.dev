@@ -2,12 +2,12 @@
 title: "C++ vs Go: Similarities, Differences, and When to Use Each"
 description: "Learn the differences between C++ and Go, their strengths and weaknesses, and when to use each language in real-world software projects."
 tags: ["Learn"]
-publishedDate: "2026-01-11 21:00"
+publishedDate: "2026-01-11 18:00"
 coverImage: "/assets/c++vsgo.png"
 author: "Miguel Aréjula Aísa"
 authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
 authorUrl: "https://github.com/Arejula11"
-draft: true
+draft: false
 language: "en"
 keywords: [ "C++ vs Go", "Go vs C++", "C++ vs Golang", "C++ compared to Go", "differences between C++ and Go", "C++ vs Go performance", "Go vs C++ performance", "C++ vs Go memory management", "Go vs C++ memory management", "C++ vs Go concurrency", "Go vs C++ concurrency", "when to use C++", "when to use Go", "should I use C++ or Go", "C++ vs Go use cases", "Go vs C++ use cases", "C++ vs Go for backend development", "Go vs C++ for backend development", "C++ vs Go for systems programming", "Go vs C++ for systems programming", "Go vs C++ for microservices", "C++ programming language comparison", "Go programming language comparison", "compiled languages comparison", "systems programming languages"
 ]
