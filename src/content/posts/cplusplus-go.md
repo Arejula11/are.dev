@@ -3,7 +3,7 @@ title: "C++ vs Go: Similarities, Differences, and When to Use Each"
 description: "Learn the differences between C++ and Go, their strengths and weaknesses, and when to use each language in real-world software projects."
 tags: ["Learn"]
 publishedDate: "2026-01-11 18:00"
-coverImage: "/assets/c++vsgo.png"
+coverImage: "/assets/c++vsgo.webp"
 author: "Miguel Aréjula Aísa"
 authorImage: "https://avatars.githubusercontent.com/u/92888725?v=4"
 authorUrl: "https://github.com/Arejula11"
