@@ -81,16 +81,16 @@ import Sdu from "@/icons/Sdu.astro";
           </h4>
           <ul class="list-disc list-inside space-y-1 text-zinc-700">
             <li>
-              Built Leafy Wallet, an offline-first personal wallet demo for Financial Services that keeps balances, activity, contacts, and its AI assistant working with no connection at all.
+              Built Leafy Wallet, an offline-first wallet demo for Financial Services: an on-device ObjectBox store synced bidirectionally with MongoDB Atlas, payments queued offline and replayed on reconnect, semantic transaction search on Voyage AI embeddings, and a LangGraph assistant on a local Ollama model.
             </li>
             <li>
-              Implemented bidirectional sync between an on-device ObjectBox store and MongoDB Atlas, with multi-document ACID transactions and reconciliation against the external payment platform on reconnect.
+              Maintained and extended the Next.js demo-deployment tool used across the Industry Solutions team, shipping bug fixes and new features to production.
             </li>
             <li>
-              Developed a LangGraph agent over a local Ollama model, using semantic search over transaction notes (Atlas Vector Search online, ObjectBox HNSW offline) and MongoDB MCP read tools.
+              Wrote a Claude Code skill that drafts a full MongoDB Solutions Library article from a solution repository, encoding the team's template, taxonomy, and style rules so every write-up starts consistent instead of from a blank page.
             </li>
             <li>
-              Shared the solution externally through a blog post, a MongoDB Solutions Library entry, and a YouTube walkthrough video.
+              Shared the solution externally through a blog post, a MongoDB Solutions Library entry, and a YouTube video.
             </li>
           </ul>
         </div>
@@ -241,7 +241,7 @@ import Sdu from "@/icons/Sdu.astro";
                   <li>Offline-first wallet demo for Financial Services.</li>
                   <li>On-device ObjectBox store synced bidirectionally with Atlas.</li>
                   <li>LangGraph assistant over a local Ollama model.</li>
-                  <li><strong>Tools:</strong> Atlas, ObjectBox, Next.js, FastAPI, LangGraph, Ollama, Docker</li>
+                  <li><strong>Tools:</strong> MongoDB Atlas, Atlas Vector Search, MongoDB MCP, Voyage AI, ObjectBox, Next.js, FastAPI, LangGraph, Ollama, Docker</li>
                 </ul>
               </div>
               <div class="flex flex-wrap gap-4 mt-2">
@@ -498,6 +498,9 @@ import Sdu from "@/icons/Sdu.astro";
             <div class="flex flex-wrap gap-2">
               <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="PostgreSQL database">PostgreSQL</span>
               <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="MongoDB database">MongoDB</span>
+              <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="MongoDB Atlas cloud database">MongoDB Atlas</span>
+              <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Atlas Vector Search">Atlas Vector Search</span>
+              <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="ObjectBox embedded database">ObjectBox</span>
             </div>
           </div>
 
@@ -512,6 +515,7 @@ import Sdu from "@/icons/Sdu.astro";
               <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Node.js JavaScript runtime">Node.js</span>
               <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Express web framework">Express</span>
               <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Astro framework">Astro</span>
+              <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Next.js framework">Next.js</span>
               <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="FastAPI framework">FastAPI</span>
             </div>
           </div>
@@ -536,6 +540,18 @@ import Sdu from "@/icons/Sdu.astro";
               <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Render platform">Render</span>
               <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Railway platform">Railway</span>
               <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Azure cloud platform">Azure</span>
+            </div>
+          </div>
+
+          <!-- AI -->
+          <div class="p-6 bg-white border border-zinc-200 rounded-2xl hover:shadow-md hover:-translate-y-1 transition-all">
+            <h4 class="font-semibold text-zinc-800 mb-3">AI</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="LangGraph agent framework">LangGraph</span>
+              <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Model Context Protocol">MCP</span>
+              <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Ollama local model runtime">Ollama</span>
+              <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Voyage AI embeddings">Voyage AI</span>
+              <span class="text-orange-500 px-3 py-1 rounded-full text-sm shadow-md border border-orange-500" aria-label="Claude Code">Claude Code</span>
             </div>
           </div>
         </div>
